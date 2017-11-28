@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Pinterest</title>
+	<script src="https://use.fontawesome.com/0f643a1640.js"></script>
+	<link rel="stylesheet" type="text/css" href="./lib/node_modules/bootstrap/dist/css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="./styles/main.css">
+</head>
+<body ng-app="PinterestApp">
+	<div ng-include="'./partials/navbar.html'"></div>
+	<div ng-view></div>
+
+
+
+<script src="https://www.gstatic.com/firebasejs/4.6.2/firebase.js"></script>
+<script type="text/javascript" src="./lib/node_modules/jquery/dist/jquery.min.js"></script>
+<script type="text/javascript" src="./lib/node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="./lib/node_modules/angular/angular.min.js"></script>
+<script type="text/javascript" src="./lib/node_modules/angular-route/angular-route.min.js"></script>
+<script type="text/javascript" src="./lib/node_modules/angular-animate/angular-animate.min.js"></script>
+<script type="text/javascript" src="./lib/node_modules/angular-sanitize/angular-sanitize.min.js"></script>
+
+<script type="text/javascript" src="./javascripts/app.js"></script>
+<script type="text/javascript" src="./javascripts/AppConstants.js"></script>
+<script type="text/javascript" src="./javascripts/AppConfig.js"></script>
+
+<script type="text/javascript" src="./javascripts/services/AuthService.js"></script>
+<script type="text/javascript" src="./javascripts/services/PinService.js"></script>
+
+<script type="text/javascript" src="./javascripts/controllers/BoardsCtrl.js"></script>
+<script type="text/javascript" src="./javascripts/controllers/LoginCtrl.js"></script>
+<script type="text/javascript" src="./javascripts/controllers/NavCtrl.js"></script>
+<script type="text/javascript" src="./javascripts/controllers/SettingsCtrl.js"></script>
+<script type="text/javascript" src="./javascripts/controllers/ViewCtrl.js"></script>
+</body>
+</html>
