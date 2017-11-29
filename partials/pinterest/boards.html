@@ -1,0 +1,26 @@
+<div class="text-center" id="rated">
+	<h1>My Boards</h1>
+
+	<br>
+
+	<div id="all-boards">
+		<div ng-repeat="board in boards" class="col-md-6">
+		    <div class="thumbnail">
+		    	<button class="btn btn-default detail" ng-click="boardDetail(board)"><i class="fa fa-search" aria-hidden="true"></i></button>
+		    	<button class="btn btn-default detail" ng-click="boardEdit(board)"><i class="fa fa-pencil" aria-hidden="true"></i></button>
+		    	<button class="btn btn-default delete" ng-click="boardDelete(board.id)"><i class="fa fa-trash-o" aria-hidden="true"></i></button>
+			    <div class="contact-info">
+			    	<ul id="contact-data">
+				    	<li><p><span class="left">Id:</span> &nbsp <span class="right">{{board.boardId}}</span></p></li>
+				    	<li><p><span class="left">Name:</span> &nbsp <span class="right">{{board.name}}</span></p></li>
+				    	<li><p><span class="left">Counts:</span> &nbsp <span class="right">{{board.counts}}</span></p></li>
+				    	<li><p><span class="left">Uid:</span> &nbsp <span class="right">{{board.uid}}</span></p></li>
+				    </ul>
+			    </div>
+	     	</div>
+		</div>
+	</div>
+
+
+
+</div>
