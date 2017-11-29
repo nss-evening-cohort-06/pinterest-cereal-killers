@@ -47,6 +47,10 @@
                 controller: 'ViewCtrl',
                 // resolve: '{isAuth}'
             })
-            
+            .when("/pinterest/avatars", {
+                templateUrl: 'partials/pinterest/avatars.html',
+                controller: 'AvatarCtrl',
+                // resolve: '{isAuth}'
+            })
             .otherwise('/login');
     });
