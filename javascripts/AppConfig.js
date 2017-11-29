@@ -9,7 +9,7 @@ let isAuth = (AuthService) => new Promise ((resolve, reject) => {
     }
   });
 
-app.run(function($location, $rootScope, FIREBASE_CONFIG, AuthService){
+/*app.run(function($location, $rootScope, FIREBASE_CONFIG, AuthService){
     firebase.initializeApp(FIREBASE_CONFIG);
     
     $rootScope.$on('$routeChangeStart', function(event, currRoute, prevRoute) {
@@ -23,10 +23,10 @@ app.run(function($location, $rootScope, FIREBASE_CONFIG, AuthService){
     
         if (!appTo && !logged) {
             event.preventDefault();
-            $location.path('/login');
+            $location.path('/view');
         }
     });
-});
+});*/
 
 app.config(function($routeProvider){
     $routeProvider
