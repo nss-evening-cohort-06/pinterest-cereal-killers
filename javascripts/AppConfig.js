@@ -9,23 +9,23 @@ let isAuth = (AuthService) => new Promise ((resolve, reject) => {
     }
   });
 
-app.run(function($location, $rootScope, FIREBASE_CONFIG, AuthService){
-    firebase.initializeApp(FIREBASE_CONFIG);
+// app.run(function($location, $rootScope, FIREBASE_CONFIG, AuthService){
+//     firebase.initializeApp(FIREBASE_CONFIG);
     
-    $rootScope.$on('$routeChangeStart', function(event, currRoute, prevRoute) {
-        var logged = AuthService.isAuthenticated();
+//     $rootScope.$on('$routeChangeStart', function(event, currRoute, prevRoute) {
+//         var logged = AuthService.isAuthenticated();
         
-        var appTo;
+//         var appTo;
     
-        if (currRoute.originalPath) {
-            appTo = currRoute.originalPath.indexOf('/login') !== -1;
-        }
-        if (!appTo && !logged) {
-            event.preventDefault();
-            $location.path('/login');
-        }
-    });
-});
+//         if (currRoute.originalPath) {
+//             appTo = currRoute.originalPath.indexOf('/login') !== -1;
+//         }
+//         if (!appTo && !logged) {
+//             event.preventDefault();
+//             $location.path('/login');
+//         }
+//     });
+// });
 
 app.config(function($routeProvider){
     $routeProvider
@@ -49,8 +49,8 @@ app.config(function($routeProvider){
             // resolve: '{isAuth}'
         })
         .when("/pinterest/avatars", {
-            templateUrl: 'partials/pinterest/avatars.html',
-            controller: 'AvatarCtrl',
+            templateUrl: 'partials/avatars.html',
+            controller: 'AvatarsCtrl',
             // resolve: '{isAuth}'
         })
         .otherwise('/login');
