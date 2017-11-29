@@ -23,5 +23,13 @@ app.service("PinService", function($http, $q, FIREBASE_CONFIG) {
 		return $http.delete(`${FIREBASE_CONFIG.databaseURL}/boards/${boardId}.json`);
 	};
 
+	const putBoard = (existingBoard) => { // firebase returns id when post is successfull
+		let boardId = existingBoard.id;
+		delete existingBoard.id;
+		delete existingBoard.$$hashKey;
+		return $http.put(`${FIREBASE_CONFIG.databaseURL}/boards/${boardId}.json`, JSON.stringify(existingBoard));
+	};
+
+
 	return { getBoards, deleteBoard };
 }); 

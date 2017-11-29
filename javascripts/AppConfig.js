@@ -51,7 +51,7 @@ app.config(function($routeProvider){
         })
         .when("/pinterest/editBoard/:id", {
             templateUrl: 'partials/boardsNew.html',
-            controller: 'BoardsCtrl',
+            controller: 'BoardsNewCtrl',
             resolve: {isAuth}
         })
         .otherwise('/login');

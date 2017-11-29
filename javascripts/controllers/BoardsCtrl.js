@@ -22,6 +22,12 @@ app.controller("BoardsCtrl", function($location, $rootScope, $scope, PinService)
 	};
 
 
+	$scope.boardEdit = (boardToEdit) => {
+    	$rootScope.boardToEdit = boardToEdit;
+    	$rootScope.boardEditFlag = true;
+    	$location.path(`/pinterest/editBoard/${boardToEdit.id}`);
+  	};
+
 
 	getMyBoards();
 
