@@ -1,0 +1,149 @@
+{
+	"pins": {
+		"pin0": { 
+				"pinId": 0,
+				"url": "https://www.petcofoundation.org/put-your-love-into-action/learn-about-adoption/",
+				"title": "pin0",
+				"datePinned": "2017-11-27",
+				"uid": "fasdfasdfafas313123xxs",
+				"board": "Dogs",
+				"notes": "I love dogs!"
+		},
+		"pin1": { 
+				"pinId": 1,
+				"url": "https://www.facebook.com/officialsuperdogs/",
+				"title": "pin1",
+				"datePinned": "2017-11-27",
+				"uid": "fasdfasdfafas313123xxs",
+				"board": "Dogs",
+				"notes": "I love dogs!"
+		},
+		"pin2": { 
+				"pinId": 2,
+				"url": "http://www.imdb.com/title/tt0099496/",
+				"title": "pin2",
+				"datePinned": "2017-11-27",
+				"uid": "vvvvvsdfafas313189ju23s",
+				"board": "Elves",
+				"notes": "I don't love elves!"
+		},
+		"pin3": { 
+				"pinId": 3,
+				"url": "http://www.elfcrazy.com/traditional-names-of-the-first-christmas-elves/",
+				"title": "pin3",
+				"datePinned": "2017-11-27",
+				"uid": "vvvvvsdfafas313189ju23s",
+				"board": "Elves",
+				"notes": "I love this Elf."
+		}
+	},
+	"boards": {
+		"board0": {
+				"boardId": 0,
+				"name": "Dogs",
+				"counts": 1,
+				"uid": "fasdfasdfafas313123xxs"
+		},
+		"board1": {
+				"boardId": 1,
+				"name": "Cats",
+				"counts": 1,
+				"uid": "fasdfasdfafas313123xxs"
+		},
+		"board2": {
+				"boardId": 2,
+				"name": "Birds",
+				"counts": 1,
+				"uid": "vvvvvsdfafas313189ju23s"
+		},
+		"board3": {
+				"boardId": 3,
+				"name": "Elves",
+				"counts": 1,
+				"uid": "vvvvvsdfafas313189ju23s"
+		}
+	},
+	"users": {
+		"user0": {
+				"userId": 0,
+				"uid": "fasdfasdfafas313123xxs",
+				"userName": "JL",
+				"firstName": "Juno",
+				"lastName": "Lee",
+				"bio": "Mac Daddy of them all.",
+				"avatar_id": 3
+		},
+		"user1": {
+				"userId": 1,
+				"uid": "vvvvvsdfafas313189ju23s",
+				"userName": "GA",
+				"firstName": "Gina",
+				"lastName": "Daddy",
+				"bio": "Della is from Craig's list.",
+				"avatar_id": 2
+		},
+		"user2": {
+				"userId": 2,
+				"uid": "frt65hyyuuytrgbdW",
+				"userName": "BL",
+				"firstName": "Brooke",
+				"lastName": "Lewis",
+				"bio": "Fearless Pintrest Knock-off Leader.",
+				"avatar_id": 1
+		},
+		"user3": {
+				"userId": 3,
+				"uid": "juvyYYhSdchd1pl0",
+				"userName": "KL",
+				"firstName": "Ken",
+				"lastName": "Lewis",
+				"bio": "Look, Everybody!  I'm Mary Poppins!",
+				"avatar_id": 0
+		}
+	},
+	"avatars": {
+		"avatars0": {
+				"avatarId": 0,
+				"avatar_url": "./images/avatar_pics/Rudolph.png",
+				"name": "Rudolph"
+		},
+		"avatars1": {
+				"avatarId": 1,
+				"avatar_url": "./images/avatar_pics/Dancer.png",
+				"name": "Dancer"
+		},
+		"avatars2": {
+				"avatarId": 2,
+				"avatar_url": "./images/avatar_pics/Prancer.png",
+				"name": "Prancer"
+		},
+		"avatars3": {
+				"avatarId": 3,
+				"avatar_url": "./images/avatar_pics/Vixen.png",
+				"name": "Vixen"
+		}
+	},
+	"userAvatars": {
+		"userAvatars0": {
+				"avatar_id": 0,
+				"user_id": 3
+		},
+		"userAvatars1": {
+				"avatar_id": 1,
+				"user_id": 2
+		},
+		"userAvatars2": {
+				"avatar_id": 2,
+				"user_id": 1
+		},
+		"userAvatars3": {
+				"avatar_id": 3,
+				"user_id": 0
+		}
+	},
+	"counters": {
+		"userCounter": 4,
+		"boardCounter": 4,
+		"avatarCounter": 4
+	}
+}
