@@ -15,14 +15,29 @@ app.service("PinService", function($http, $q, FIREBASE_CONFIG) {
 					
 					resolve(pinArray);			
 						
-					
 			}).catch((err) => {
 				console.log("error in getAllPins", err);
 			});
 		});
 	};
 
+	const addNewPin = (newPin) => {
+		return $http.post(`${FIREBASE_CONFIG.databaseURL}/pins.json`, JSON.stringify(newPin));
+	};
 
-return {getAllPins};
+	const deletePin = (pinId) => {
+		return $http.delete(`${FIREBASE_CONFIG.databaseURL}/pins/${pinId}.json`);
+	};
+
+	const updatePin = (updatedPin, pinId) => {
+		return $http.put(`${FIREBASE_CONFIG.databaseURL}/pins/${pinId}.json`, JSON.stringify(updatedPin));
+	};
+
+	const getSinglePin = (pinId) => {
+		return $http.get(`${FIREBASE_CONFIG.databaseURL}/pins/${pinId}.json`);
+	};
+
+
+return {getAllPins, addNewPin, deletePin, updatePin, getSinglePin};
 
 });
