@@ -9,23 +9,26 @@ let isAuth = (AuthService) => new Promise ((resolve, reject) => {
     }
   });
 
-// app.run(function($location, $rootScope, FIREBASE_CONFIG, AuthService){
-//     firebase.initializeApp(FIREBASE_CONFIG);
+
+/*app.run(function($location, $rootScope, FIREBASE_CONFIG, AuthService){
+    firebase.initializeApp(FIREBASE_CONFIG);
     
 //     $rootScope.$on('$routeChangeStart', function(event, currRoute, prevRoute) {
 //         var logged = AuthService.isAuthenticated();
         
 //         var appTo;
+
+        if (currRoute.originalPath) {
+            appTo = currRoute.originalPath.indexOf('/login') !== -1;
+        }
     
-//         if (currRoute.originalPath) {
-//             appTo = currRoute.originalPath.indexOf('/login') !== -1;
-//         }
-//         if (!appTo && !logged) {
-//             event.preventDefault();
-//             $location.path('/login');
-//         }
-//     });
-// });
+        if (!appTo && !logged) {
+            event.preventDefault();
+            $location.path('/view');
+        }
+    });
+});*/
+
 
 app.config(function($routeProvider){
     $routeProvider
