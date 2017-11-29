@@ -20,7 +20,6 @@ let isAuth = (AuthService) => new Promise ((resolve, reject) => {
 //         if (currRoute.originalPath) {
 //             appTo = currRoute.originalPath.indexOf('/login') !== -1;
 //         }
-    
 //         if (!appTo && !logged) {
 //             event.preventDefault();
 //             $location.path('/login');
