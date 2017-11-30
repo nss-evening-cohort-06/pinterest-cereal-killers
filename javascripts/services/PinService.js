@@ -2,6 +2,17 @@
 
 app.service("PinService", function($http, $q, FIREBASE_CONFIG) {
 
+	const createPinObject = (newpin) => {
+		return {
+			"board": newpin.board,
+			"title": newpin.title,
+			"url": newpin.url,
+			"notes": newpin.notes,
+			"datePinned": newpin.datePinned,
+			"user_id": "fasdfasdfafas313123xxs",
+		};
+	};
+
 	const getBoards = (userUid) => {
 	    let boards = [];
 	    return $q((resolve, reject) => { 
@@ -57,11 +68,12 @@ app.service("PinService", function($http, $q, FIREBASE_CONFIG) {
 
 	const getSinglePin = (pinId) => {
 		return $http.get(`${FIREBASE_CONFIG.databaseURL}/pins/${pinId}.json`);
-    };
+	};
     
     const addNewAvatar = (newAvatar) => {
 		return $http.post(`${FIREBASE_CONFIG.databaseURL}/avatars.json`, JSON.stringify(newAvatar));
     };
     
-return {getBoards, deleteBoard, getAllPins, addNewPin, deletePin, updatePin, getSinglePin, addNewAvatar};
+return {getBoards, deleteBoard, getAllPins, addNewPin, deletePin, updatePin, getSinglePin, createPinObject, addNewAvatar};
+
 });
