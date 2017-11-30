@@ -2,13 +2,13 @@
 
 app.controller("NewBoardsCtrl", function($location, $rootScope, $scope, PinService) {
 
-	$scope.saveContact = (contact) => {
-		contact.uid = $rootScope.uid;
-		contact.favorite = false;
-		ContactService.postNewContact(contact).then(() => {
-			$location.path('/contacts/view');
+	$scope.saveBoard = (board) => {
+		board.uid = $rootScope.uid;
+		board.favorite = false;
+		PinService.postNewBoard(board).then(() => {
+			$location.path('/partials/pinterest/boards');
 		}).catch((err) => {
-			console.log("error in postNewContact", err);
+			console.log("error in postNewBoard", err);
 		});
 	};
 
@@ -21,23 +21,23 @@ app.controller("NewBoardsCtrl", function($location, $rootScope, $scope, PinServi
  	};
 
 
- 	const editContacts = () => {
+ 	const editBoard = () => {
  		if ($rootScope.contactToEdit) {
  			$scope.contact = $rootScope.contactToEdit;
  			$rootScope.contactToEdit = null;
  		}
  	};
 
- 	$scope.updateContact = (contact) => {
- 		ContactService.putContact(contact).then(() => {
-			$location.path('/contacts/view');
+ 	$scope.updateBoard = (contact) => {
+ 		PinService.putBoard(contact).then(() => {
+			$location.path('/partials/pinterest/boards');
 			$rootScope.flag = false;
 		}).catch((err) => {
 			console.log("error in updateContact", err);
 		});
  	};
 
- 	editContacts();
+ 	editBoard();
 
  	$scope.degrees = ['Doctorate', 'Masters of Science', 'Masters of Arts', 'Bachelor of Science', 'Bachelor of Arts', 'Associates in Arts'];
 

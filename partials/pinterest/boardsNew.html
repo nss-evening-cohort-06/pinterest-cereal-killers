@@ -1,60 +1,26 @@
 <div class="text-center" id="newBoard">
-	<h1 ng-if="flag">Edit Board Form</h1>
-	<h1 ng-if="!flag">New Boards Form</h1>
+	<h1 ng-if="boardEditFlag">Edit Board Form</h1>
+	<h1 ng-if="!boardEditFlag">New Boards Form</h1>
 
 	<form name="formNewBoard" novalidate >
 	 	<div class="row">
 	    	<div class="col-md-4 col-md-offset-4 mb-3">
-	      		<input type="text" class="form-control new-board" name="boardName" ng-model="contact.firstName" placeholder="First name" required>
-	      		<span class="formError" ng-show="formNewContact.firstName.$touched && formNewContact.firstName.$invalid">First name is required.</span>
+	      		<input type="text" class="form-control new-board" name="boardName" ng-model="board.name" placeholder="First name" required>
+	      		<span class="formError" ng-show="formNewBoard.boardName.$touched && formNewBoard.boardName.$invalid">First name is required.</span>
 	    	</div>
 		</div>
-	  	<div class="row">
-	    	<div class="col-md-4 col-md-offset-4 mb-3">
-	      		<input type="text" class="form-control new-contact" name="lastName"  ng-model="contact.lastName" placeholder="Last name" required>
-	      		<span class="formError" ng-show="formNewContact.lastName.$touched && formNewContact.lastName.$invalid">Last name is required.</span>
-	    	</div>
-	  	</div>
-	  	<div class="row">
-	    	<div class="col-md-4 col-md-offset-4 mb-3">
-	      		<input type="text" class="form-control new-contact" name="phoneHome"  ng-model="contact.phoneHome" placeholder="home phone: xxx-xxx-xxxx" ng-pattern="/(?:^\d{3}-\d{3}-\d{4})$/" maxlength="12" required>
-	      		<span class="formError" ng-show="formNewContact.phoneHome.$touched && formNewContact.phoneHome.$invalid">Home phone is required.</span>
-	    	</div>
-		</div>
-	  	<div class="row">
-	    	<div class="col-md-4 col-md-offset-4 mb-3">
-	      		<input type="text" class="form-control new-contact" name="phoneWork"  ng-model="contact.phoneWork" placeholder="work phone: xxx-xxx-xxxx" ng-pattern="/(?:^\d{3}-\d{3}-\d{4})$/" maxlength="12" required>
-	      		<span class="formError" ng-show="formNewContact.phoneWork.$touched && formNewContact.phoneWork.$invalid">Work phone is required.</span>
-	    	</div>
-	  	</div>
-	  	<div class="row">
-	    	<div class="col-md-4 col-md-offset-4 mb-3">
-	      		<input type="text" class="form-control new-contact" name="emailHome"  ng-model="contact.emailHome" placeholder="homeEmail@home.com" ng-pattern="/^(?:\d{10}|\w+@\w+\.\w{2,3})$/" required>
-	      		<span class="formError" ng-show="formNewContact.emailHome.$touched && formNewContact.emailHome.$invalid">Home email is required.</span>
-	    	</div>
-		</div>
-	  	<div class="row">
-	    	<div class="col-md-4 col-md-offset-4 mb-3">
-	      		<input type="text" class="form-control new-contact" name="emailWork"  ng-model="contact.emailWork" placeholder="workEmail@work.com" ng-pattern="/^(?:\d{10}|\w+@\w+\.\w{2,3})$/" required>
-	      		<span class="formError" ng-show="formNewContact.emailWork.$touched && formNewContact.emailWork.$invalid">Work email is required.</span>
-	    	</div>
-	  	</div>
-	  	<div class="row">
+
+<!-- 	  	<div class="row">
 	    	<div class="col-md-4 col-md-offset-4">
-	      		<select name="degree" ng-options="x for x in degrees" ng-model="contact.degree"></select>
+	      		<textarea class="form-control new-board" name="notes"  ng-model="board.notes" placeholder="board notes"></textarea>
 	    	</div>
-	  	</div>
-	  	<div class="row">
-	    	<div class="col-md-4 col-md-offset-4">
-	      		<textarea class="form-control new-contact" name="notes"  ng-model="contact.notes" placeholder="contact notes"></textarea>
-	    	</div>
-	  	</div>
+	  	</div> -->
 	  	<div class="row">
 	    	<div class="col-md-2 col-md-offset-4 mb-3" ng-if="flag">
-	      		<button class="btn btn-default" id="editContact" ng-click="updateContact(contact)" ng-disabled="formNewContact.$invalid || formNewContact.$pristine">Edit Contact</Button>
+	      		<button class="btn btn-default" id="editContact" ng-click="updateBoard(board)" ng-disabled="formNewBoard.$invalid || formNewBoard.$pristine">Edit Board</Button>
 	    	</div>
 	    	<div class="col-md-2 col-md-offset-4 mb-3" ng-if="!flag">
-	      		<button class="btn btn-default" id="addContact" ng-click="saveContact(contact)" ng-disabled="formNewContact.$invalid || formNewContact.$pristine">Add Contact</Button>
+	      		<button class="btn btn-default" id="addNewBoard" ng-click="saveBoard(board)" ng-disabled="formNewBoard.$invalid || formNewBoard.$pristine">Add New Board</Button>
 	    	</div>
 	    	<div class="col-md-2 mb-3">
 	      		<button class="btn btn-danger" id="clearContact" type="reset" ng-click="reset()">Clear Form</Button>
