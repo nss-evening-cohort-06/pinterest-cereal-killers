@@ -33,4 +33,8 @@ app.controller("ViewCtrl", function($location, $rootScope, $scope, PinService) {
 		});
 	};
 
+	$scope.savePin = (pinId) => {
+	$location.path(`/pinterest/viewpinedit/${pinId}`);
+};
+
 });
