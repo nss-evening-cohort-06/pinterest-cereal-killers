@@ -35,9 +35,13 @@ app.service("PinService", function($http, $q, FIREBASE_CONFIG) {
 
 	const getSinglePin = (pinId) => {
 		return $http.get(`${FIREBASE_CONFIG.databaseURL}/pins/${pinId}.json`);
-	};
+    };
+    
+    const addNewAvatar = (newAvatar) => {
+		return $http.post(`${FIREBASE_CONFIG.databaseURL}/avatars.json`, JSON.stringify(newAvatar));
+    };
+    
 
-
-return {getAllPins, addNewPin, deletePin, updatePin, getSinglePin};
+return {getAllPins, addNewPin, deletePin, updatePin, getSinglePin, addNewAvatar};
 
 });
