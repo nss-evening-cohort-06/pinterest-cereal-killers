@@ -17,18 +17,17 @@ let isAuth = (AuthService) => new Promise ((resolve, reject) => {
 //         var logged = AuthService.isAuthenticated();
         
 //         var appTo;
-
-        if (currRoute.originalPath) {
-            appTo = currRoute.originalPath.indexOf('/login') !== -1;
-        }
     
-        if (!appTo && !logged) {
-            event.preventDefault();
-            $location.path('/view');
-        }
-    });
-});*/
-
+//         if (currRoute.originalPath) {
+//             appTo = currRoute.originalPath.indexOf('/login') !== -1;
+//         }
+//         if (!appTo && !logged) {
+//             event.preventDefault();
+//             $location.path('/login');
+//         }
+//     });
+// });
+*/
 
 app.config(function($routeProvider){
     $routeProvider
@@ -39,22 +38,27 @@ app.config(function($routeProvider){
         .when("/pinterest/boards", {
             templateUrl: 'partials/pinterest/boards.html',
             controller: 'BoardsCtrl',
-            // resolve: {isAuth}
+            resolve: {isAuth}
         })
         .when("/pinterest/settings", {
             templateUrl: 'partials/pinterest/settings.html',
             controller: 'SettingsCtrl',
-            // resolve: '{isAuth}'
+            resolve: '{isAuth}'
         })
         .when("/pinterest/view", {
             templateUrl: 'partials/pinterest/view.html',
             controller: 'ViewCtrl',
-            // resolve: '{isAuth}'
+            resolve: '{isAuth}'
         })
         .when("/pinterest/avatars", {
             templateUrl: 'partials/avatars.html',
             controller: 'AvatarsCtrl',
-            // resolve: '{isAuth}'
+            resolve: '{isAuth}'
+        })
+        .when("/pinterest/editBoard/:id", {
+            templateUrl: 'partials/boardsNew.html',
+            controller: 'BoardsCtrl',
+            resolve: {isAuth}
         })
         .otherwise('/login');
 });
