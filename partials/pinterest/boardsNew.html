@@ -1,0 +1,31 @@
+<div class="text-center" id="newBoard">
+	<h1 ng-if="boardEditFlag">Edit Board Form</h1>
+	<h1 ng-if="!boardEditFlag">New Boards Form</h1>
+
+	<form name="formNewBoard" novalidate >
+	 	<div class="row">
+	    	<div class="col-md-4 col-md-offset-4 mb-3">
+	      		<input type="text" class="form-control new-board" name="boardName" ng-model="board.name" placeholder="New Board Name" required>
+	      		<span class="formError" ng-show="formNewBoard.boardName.$touched && formNewBoard.boardName.$invalid">Board name is required.</span>
+	    	</div>
+		</div>
+
+<!-- 	  	<div class="row">
+	    	<div class="col-md-4 col-md-offset-4">
+	      		<textarea class="form-control new-board" name="notes"  ng-model="board.notes" placeholder="board notes"></textarea>
+	    	</div>
+	  	</div> -->
+	  	<br>
+	  	<div class="row">
+	    	<div class="col-md-2 col-md-offset-4 mb-3" ng-if="boardEditFlag">
+	      		<button class="btn btn-default" id="editContact" ng-click="updateBoard(board)" ng-disabled="formNewBoard.$invalid || formNewBoard.$pristine">Edit Board</button>
+	    	</div>
+	    	<div class="col-md-2 col-md-offset-4 mb-3" ng-if="!boardEditFlag">
+	      		<button class="btn btn-default" id="addNewBoard" ng-click="saveBoard(board)" ng-disabled="formNewBoard.$invalid || formNewBoard.$pristine">Add New Board</button>
+	    	</div>
+	    	<div class="col-md-2 mb-3">
+	      		<button class="btn btn-danger" id="clearContact" type="reset" ng-click="reset()">Clear Form</button>
+	    	</div>
+	  	</div>
+	</form>
+</div>
