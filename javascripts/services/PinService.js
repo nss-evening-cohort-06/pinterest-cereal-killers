@@ -2,6 +2,17 @@
 
 app.service("PinService", function($http, $q, FIREBASE_CONFIG) {
 
+	const createPinObject = (newpin) => {
+		return {
+			"board": newpin.board,
+			"title": newpin.title,
+			"url": newpin.url,
+			"notes": newpin.notes,
+			"datePinned": newpin.datePinned,
+			"user_id": "fasdfasdfafas313123xxs",
+		};
+	};
+
 	const getBoards = (userUid) => {
 	    let boards = [];
 	    return $q((resolve, reject) => { 
@@ -60,6 +71,6 @@ app.service("PinService", function($http, $q, FIREBASE_CONFIG) {
 	};
 
 
-return {getBoards, deleteBoard, getAllPins, addNewPin, deletePin, updatePin, getSinglePin};
+return {getBoards, deleteBoard, getAllPins, addNewPin, deletePin, updatePin, getSinglePin, createPinObject};
 
 });

@@ -1,0 +1,18 @@
+<div class="text-center" id="view">
+	<div id="pins">
+		<div ng-repeat="newPin in pins" class="col-lg-2 col-lg-offset-2">
+			<div class="thumbnail pincard">
+			<div class="pin-holder">
+				<h4>{{$scope.newPin.board}}</h4>
+				<h4>{{newPin.title}}</h4>
+				<p>{{newPin.title}}</p>
+				<p>{{newPin.url}}</p>
+				<p>{{newPin.notes}} </p>
+				<p>{{newPin.datePinned}}</p>
+				<button class="btn btn-default save col-xs-3" ng-click="deletePin(pin.id)"><i class="fa fa-bookmark-o" aria-hidden="true"></i></button>
+				
+			</div>
+		</div>
+	  </div>
+	</div>
+</div>
