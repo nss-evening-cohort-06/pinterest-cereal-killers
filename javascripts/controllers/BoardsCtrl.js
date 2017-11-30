@@ -1,11 +1,11 @@
 "use strict";
 
 
-app.controller("BoardsCtrl", function($location, $rootScope, $scope, PinService) {
+app.controller("BoardsCtrl", function($location, $rootScope, $scope, BoardService) {
 
 	const getMyBoards = () => {	
-		// PinService.getBoards($rootScope.uid).then((results) => {
-		PinService.getBoards('fasdfasdfafas313123xxs').then((results) => {
+		// BoardService.getBoards($rootScope.uid).then((results) => {
+		BoardService.getBoards('fasdfasdfafas313123xxs').then((results) => {
 			console.log('getMyBoards', results);
 			$scope.boards = results;
 		}).catch((err) => {
@@ -14,18 +14,17 @@ app.controller("BoardsCtrl", function($location, $rootScope, $scope, PinService)
 	};
 
 	$scope.boardDelete = (boardId) => { console.log("in deleteBoard", boardId);
-		PinService.deleteBoard(boardId).then((results) => {
+		BoardService.deleteBoard(boardId).then((results) => {
 			getMyBoards();
 		}).catch((err) => {
 			console.log("error in deleteMyBoards", err);
 		});
 	};
 
-
-	$scope.boardEdit = (boardToEdit) => {
+	$scope.boardEdit = (boardToEdit) => { console.log("in boardToEdit", boardToEdit);
     	$rootScope.boardToEdit = boardToEdit;
     	$rootScope.boardEditFlag = true;
-    	$location.path(`/partials/pinterest/editBoard/${boardToEdit.id}`);
+    	$location.path(`/pinterest/editBoard/${boardToEdit.id}`);
   	};
 
 

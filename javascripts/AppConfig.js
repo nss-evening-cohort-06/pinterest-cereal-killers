@@ -20,7 +20,6 @@ let isAuth = (AuthService) => new Promise ((resolve, reject) => {
 //         if (currRoute.originalPath) {
 //             appTo = currRoute.originalPath.indexOf('/login') !== -1;
 //         }
-    
 //         if (!appTo && !logged) {
 //             event.preventDefault();
 //             $location.path('/login');
@@ -50,7 +49,7 @@ app.config(function($routeProvider){
             // resolve: '{isAuth}'
         })
         .when("/pinterest/editBoard/:id", {
-            templateUrl: 'partials/boardsNew.html',
+            templateUrl: 'partials/pinterest/boardsNew.html',
             controller: 'BoardsNewCtrl',
             // resolve: {isAuth}
         })

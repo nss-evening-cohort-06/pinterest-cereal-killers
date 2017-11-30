@@ -1,11 +1,11 @@
 'use strict';
 
-app.controller("NewBoardsCtrl", function($location, $rootScope, $scope, PinService) {
+app.controller("BoardsNewCtrl", function($location, $rootScope, $scope, BoardService) {
 
 	$scope.saveBoard = (board) => {
 		board.uid = $rootScope.uid;
 		board.favorite = false;
-		PinService.postNewBoard(board).then(() => {
+		BoardService.postNewBoard(board).then(() => {
 			$location.path('/partials/pinterest/boards');
 		}).catch((err) => {
 			console.log("error in postNewBoard", err);
@@ -22,14 +22,14 @@ app.controller("NewBoardsCtrl", function($location, $rootScope, $scope, PinServi
 
 
  	const editBoard = () => {
- 		if ($rootScope.contactToEdit) {
- 			$scope.contact = $rootScope.contactToEdit;
- 			$rootScope.contactToEdit = null;
+ 		if ($rootScope.boardToEdit) {
+ 			$scope.board = $rootScope.boardToEdit;
+ 			$rootScope.boardToEdit = null;
  		}
  	};
 
  	$scope.updateBoard = (contact) => {
- 		PinService.putBoard(contact).then(() => {
+ 		BoardService.putBoard(contact).then(() => {
 			$location.path('/partials/pinterest/boards');
 			$rootScope.flag = false;
 		}).catch((err) => {
@@ -39,6 +39,5 @@ app.controller("NewBoardsCtrl", function($location, $rootScope, $scope, PinServi
 
  	editBoard();
 
- 	$scope.degrees = ['Doctorate', 'Masters of Science', 'Masters of Arts', 'Bachelor of Science', 'Bachelor of Arts', 'Associates in Arts'];
 
 });
