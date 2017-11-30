@@ -9,8 +9,9 @@ let isAuth = (AuthService) => new Promise ((resolve, reject) => {
     }
   });
 
-// app.run(function($location, $rootScope, FIREBASE_CONFIG, AuthService){
-//     firebase.initializeApp(FIREBASE_CONFIG);
+
+/*app.run(function($location, $rootScope, FIREBASE_CONFIG, AuthService){
+    firebase.initializeApp(FIREBASE_CONFIG);
     
 //     $rootScope.$on('$routeChangeStart', function(event, currRoute, prevRoute) {
 //         var logged = AuthService.isAuthenticated();
@@ -26,6 +27,7 @@ let isAuth = (AuthService) => new Promise ((resolve, reject) => {
 //         }
 //     });
 // });
+*/
 
 app.config(function($routeProvider){
     $routeProvider
@@ -35,18 +37,28 @@ app.config(function($routeProvider){
         })
         .when("/pinterest/boards", {
             templateUrl: 'partials/pinterest/boards.html',
-            controller: 'BoardsCtrl',
+            controller: 'BoardsCtrl'
             // resolve: {isAuth}
         })
         .when("/pinterest/settings", {
             templateUrl: 'partials/pinterest/settings.html',
-            controller: 'SettingsCtrl',
+            controller: 'SettingsCtrl'
             // resolve: '{isAuth}'
         })
         .when("/pinterest/view", {
             templateUrl: 'partials/pinterest/view.html',
-            controller: 'ViewCtrl',
+            controller: 'ViewCtrl'
             // resolve: '{isAuth}'
+        })
+        .when("/pinterest/avatars", {
+            templateUrl: 'partials/avatars.html',
+            controller: 'AvatarsCtrl'
+            // resolve: '{isAuth}'
+        })
+        .when("/pinterest/viewpinedit/:id", {
+            templateUrl: 'partials/pinterest/viewpinedit.html',
+            controller: 'ViewEditCtrl',
+            /*resolve: {isAuth}*/
         })
         .when("/pinterest/editBoard/:id", {
             templateUrl: 'partials/pinterest/boardsNew.html',

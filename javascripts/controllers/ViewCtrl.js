@@ -23,23 +23,18 @@ app.controller("ViewCtrl", function($location, $rootScope, $scope, PinService) {
 		});
 	};
 
-
-	$scope.submitPinForm = () => {
-		let newPin = {
-			"board": $scope.newpin.board,
-			"title": $scope.newpin.title,
-			"url": $scope.newpin.url,
-			"notes": $scope.newpin.notes,
-			"datePinned": $scope.newpin.datePinned,
-			"user_id": "fasdfasdfafas313123xxs",
-		};
 		
-
+	$scope.createNewPin = (newPin) => {
 		PinService.addNewPin(newPin).then((results) => {
 			$location.path("/contacts/view");
 		}).catch((err) => {
 			console.log("error in addNewPin", err);
+			
 		});
 	};
+
+	$scope.savePin = (pinId) => {
+	$location.path(`/pinterest/viewpinedit/${pinId}`);
+};
 
 });

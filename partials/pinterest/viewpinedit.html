@@ -1,0 +1,33 @@
+<div class="text-center" id="edit" ng-controller="ViewEditCtrl">
+<div class="editPin container col-md-9 col-md-offset-4">
+  <form class="form" name="newpin">
+    <div class="row inputRow">
+      <h3 class="friends-title"> Save Pin </h3>
+      <div class="col-xs-3">
+        <input type="text" class="form-control" id="board" placeholder="Board" ng-model="newpin.board" ng-required="true">
+      </div>
+      <div class="col-xs-3">
+        <input type="text" class="form-control" id="title" placeholder="Pin Title" ng-model="newpin.title" ng-required="true">
+      </div>
+    </div>
+    <div class="row inputRow">
+      <div class="col-xs-3">
+        <input type="text" class="form-control" id="url" placeholder="URL" ng-model="newpin.url" ng-required="true">
+      </div>
+      <div class="col-xs-3">
+        <input type="text" class="form-control" id="notes" placeholder="Notes" ng-model="newpin.notes" ng-required="true">
+      </div>
+    </div>
+    <div class="row inputRow">
+      <div class="col-xs-3">
+        <input type="text" class="form-control" id="datePinned" placeholder="Date" ng-model="newpin.datePinned" ng-required="true">
+      </div>
+      
+    <!--  <button type="button" class="btn btn-default col-xs-1 col-md-offset-6" ng-click="submitForm(contact)">Update</button> -->
+  </form>
+</div>     
+</div>
+         
+                    
+   
+ 
