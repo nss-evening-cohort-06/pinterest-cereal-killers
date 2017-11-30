@@ -37,28 +37,28 @@ app.config(function($routeProvider){
         })
         .when("/pinterest/boards", {
             templateUrl: 'partials/pinterest/boards.html',
-            controller: 'BoardsCtrl',
-            resolve: {isAuth}
+            controller: 'BoardsCtrl'
+            // resolve: {isAuth}
         })
         .when("/pinterest/settings", {
             templateUrl: 'partials/pinterest/settings.html',
-            controller: 'SettingsCtrl',
-            resolve: '{isAuth}'
+            controller: 'SettingsCtrl'
+            // resolve: '{isAuth}'
         })
         .when("/pinterest/view", {
             templateUrl: 'partials/pinterest/view.html',
-            controller: 'ViewCtrl',
-            resolve: '{isAuth}'
+            controller: 'ViewCtrl'
+            // resolve: '{isAuth}'
         })
         .when("/pinterest/avatars", {
             templateUrl: 'partials/avatars.html',
-            controller: 'AvatarsCtrl',
-            resolve: '{isAuth}'
+            controller: 'AvatarsCtrl'
+            // resolve: '{isAuth}'
         })
         .when("/pinterest/editBoard/:id", {
             templateUrl: 'partials/boardsNew.html',
-            controller: 'BoardsCtrl',
-            resolve: {isAuth}
+            controller: 'BoardsCtrl'
+            // resolve: {isAuth}
         })
         .otherwise('/login');
 });
