@@ -18,7 +18,6 @@ app.service("BoardService", function($http, $q, FIREBASE_CONFIG) {
 	    });
 	};
 
-
 	const deleteBoard = (boardId) => {
 		return $http.delete(`${FIREBASE_CONFIG.databaseURL}/boards/${boardId}.json`);
 	};
@@ -30,6 +29,10 @@ app.service("BoardService", function($http, $q, FIREBASE_CONFIG) {
 		return $http.put(`${FIREBASE_CONFIG.databaseURL}/boards/${boardId}.json`, JSON.stringify(existingBoard));
 	};
 
-	return { getBoards, deleteBoard, putBoard };
+	const createNewBoard = (newBoard) => { // firebase returns id when post is successfull
+		return $http.post(`${FIREBASE_CONFIG.databaseURL}/boards.json`, JSON.stringify(newBoard));
+	};
+
+	return { getBoards, deleteBoard, putBoard, createNewBoard };
 
 });
