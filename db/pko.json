@@ -6,7 +6,7 @@
 				"title": "pin0",
 				"datePinned": "2017-11-27",
 				"uid": "fasdfasdfafas313123xxs",
-				"board": "Dogs",
+				"board_id": 0,
 				"notes": "I love dogs!"
 		},
 		"pin1": { 
@@ -15,7 +15,7 @@
 				"title": "pin1",
 				"datePinned": "2017-11-27",
 				"uid": "fasdfasdfafas313123xxs",
-				"board": "Dogs",
+				"board_id": 0,
 				"notes": "I love dogs!"
 		},
 		"pin2": { 
@@ -24,7 +24,7 @@
 				"title": "pin2",
 				"datePinned": "2017-11-27",
 				"uid": "vvvvvsdfafas313189ju23s",
-				"board": "Elves",
+				"board_id": 3,
 				"notes": "I don't love elves!"
 		},
 		"pin3": { 
@@ -33,7 +33,7 @@
 				"title": "pin3",
 				"datePinned": "2017-11-27",
 				"uid": "vvvvvsdfafas313189ju23s",
-				"board": "Cats",
+				"board_1": 1,
 				"notes": "I love cats."
 		},
 		"pin4": { 
@@ -42,7 +42,7 @@
 				"title": "pin4",
 				"datePinned": "2017-11-29",
 				"uid": "vvvvvsdfafas313189ju23s",
-				"board": "Cats",
+				"board_id": 1,
 				"notes": "I love this cats."
 		},
 		"pin5": { 
@@ -51,7 +51,7 @@
 				"title": "pin5",
 				"datePinned": "2017-11-29",
 				"uid": "vvvvvsdfafas313189ju23s",
-				"board": "Fishes",
+				"board_4": 4,
 				"notes": "I love this Elf."
 		},
 		"pin6": { 
@@ -60,7 +60,7 @@
 				"title": "pin6",
 				"datePinned": "2017-11-29",
 				"uid": "vvvvvsdfafas313189ju23s",
-				"board": "Fishes",
+				"board_id": 4,
 				"notes": "I love this Elf."
 		},
 		"pin7": { 
@@ -69,7 +69,7 @@
 				"title": "pin7",
 				"datePinned": "2017-11-29",
 				"uid": "vvvvvsdfafas313189ju23s",
-				"board": "Birds",
+				"board_id": 2,
 				"notes": "I love birds."
 		},
 		"pin8": { 
@@ -78,7 +78,7 @@
 				"title": "pin8",
 				"datePinned": "2017-11-29",
 				"uid": "vvvvvsdfafas313189ju23s",
-				"board": "Birds",
+				"board_id": 2,
 				"notes": "I love Birds."
 		},
 		"pin9": { 
@@ -87,7 +87,7 @@
 				"title": "pin9",
 				"datePinned": "2017-11-29",
 				"uid": "vvvvvsdfafas313189ju23s",
-				"board": "Turtles",
+				"board_id": 5,
 				"notes": "I love this Turtles."
 		}
 	},
@@ -212,4 +212,5 @@
 		"boardCounter": 4,
 		"avatarCounter": 4
 	}
+	
 }
