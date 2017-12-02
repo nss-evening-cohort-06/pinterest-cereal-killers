@@ -1,8 +1,9 @@
 "use strict";
 
 app.controller("ViewCtrl", function($location, $rootScope, $scope, PinService, BoardService) {
+
 	$scope.pins = [];
-	$scope.newPin = {};
+	$scope.pinObject = {};
 
 	const getPins = () => {
 		PinService.getAllPins("fasdfasdfafas313123xxs").then((results) => {
@@ -28,15 +29,26 @@ app.controller("ViewCtrl", function($location, $rootScope, $scope, PinService, B
 		
 	$scope.createNewPin = (newPin) => {
 		PinService.addNewPin(newPin).then((results) => {
-			$location.path("/contacts/view");
+			$location.path("/pinterest/viewpinedit");
 		}).catch((err) => {
 			console.log("error in addNewPin", err);
 			
 		});
 	};
 
-	$scope.savePin = (pinId) => {
-	$location.path(`/pinterest/viewpinedit/${pinId}`);
-};
+	$scope.submitForm = (newpin) => { 
+		 $rootScope.updatedPin = {
+			"board": newpin.board,
+			"title": newpin.title,
+			"url": newpin.url,
+			"notes": newpin.notes,
+			"datePinned": newpin.datePinned,
+			"user_id": "fasdfasdfafas313123xxs",
+		};
+		$location.path("/pinterest/viewpinedit");
+	};
+		
+		
 
+	
 });

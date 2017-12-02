@@ -55,7 +55,7 @@ app.config(function($routeProvider){
             controller: 'AvatarsCtrl'
             // resolve: '{isAuth}'
         })
-        .when("/pinterest/viewpinedit/:id", {
+        .when("/pinterest/viewpinedit", {
             templateUrl: 'partials/pinterest/viewpinedit.html',
             controller: 'ViewEditCtrl',
             /*resolve: {isAuth}*/
