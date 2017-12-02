@@ -21,12 +21,16 @@ app.controller("BoardsCtrl", function($location, $rootScope, $scope, BoardServic
 		});
 	};
 
-	$scope.boardEdit = (boardToEdit) => { console.log("in boardToEdit", boardToEdit);
+	$scope.boardEdit = (boardToEdit) => { 
     	$rootScope.boardToEdit = boardToEdit;
     	$rootScope.boardEditFlag = true;
     	$location.path(`/pinterest/editBoard/${boardToEdit.id}`);
   	};
 
+	$scope.boardCreate = () => { console.log("in boardCreate");
+    	$rootScope.boardEditFlag = false;
+    	$location.path(`/pinterest/createNewBoard`);
+  	};
 
 	getMyBoards();
 
