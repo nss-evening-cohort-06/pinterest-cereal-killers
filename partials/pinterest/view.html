@@ -3,13 +3,12 @@
 		<div ng-repeat="newPin in pins" class="col-lg-2 col-lg-offset-2">
 			<div class="thumbnail pincard">
 			<div class="pin-holder">
-				<h4>{{newPin.board}}</h4>
-				<h4>{{newPin.title}}</h4>
-				<p>{{newPin.title}}</p>
-				<p>{{newPin.url}}</p>
-				<p>{{newPin.notes}} </p>
-				<p>{{newPin.datePinned}}</p>
-				<button class="btn btn-default save col-xs-3" ng-click="savePin(pinId)"><i class="fa fa-bookmark-o" aria-hidden="true"></i></button>
+				<h4 ng-model="pinObject.board">{{newPin.board}}</h4>
+				<h4 ng-model="pinObject.title">{{newPin.title}}</h4>
+				<p ng-model="pinObject.url">{{newPin.url}}</p>
+				<p ng-model="pinObject.notes">{{newPin.notes}} </p>
+				<p ng-model="pinObject.datePinned">{{newPin.datePinned}}</p>
+				<button class="btn btn-default save col-xs-3" ng-click="submitForm(newPin)"><i class="fa fa-bookmark-o" aria-hidden="true"></i></button>
 				
 			</div>
 		</div>
