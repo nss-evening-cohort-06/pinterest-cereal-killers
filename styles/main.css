@@ -1,3 +1,6 @@
 .pincard {
   height: 218px;
   width: 310px; }
+
+ul {
+  list-style-type: none; }

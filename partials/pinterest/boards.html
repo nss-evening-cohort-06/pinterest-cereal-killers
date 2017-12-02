@@ -2,11 +2,15 @@
 	<h1>My Boards</h1>
 
 	<br>
+	<div>
+		<button class="btn btn-default detail" ng-click="boardCreate()"><i class="fa fa-plus" aria-hidden="true"></i></button>
+	</div>
+	<br>
 
 	<div id="all-boards">
 		<div ng-repeat="board in boards" class="col-md-6">
 		    <div class="thumbnail">
-		    	<button class="btn btn-default detail" ng-click="boardDetail(board)"><i class="fa fa-search" aria-hidden="true"></i></button>
+		    	<button class="btn btn-default detail" ng-click="boardDetail(board)"><i class="fa fa-info-circle" aria-hidden="true"></i></button>
 		    	<button class="btn btn-default detail" ng-click="boardEdit(board)"><i class="fa fa-pencil" aria-hidden="true"></i></button>
 		    	<button class="btn btn-default delete" ng-click="boardDelete(board.id)"><i class="fa fa-trash-o" aria-hidden="true"></i></button>
 			    <div class="contact-info">
