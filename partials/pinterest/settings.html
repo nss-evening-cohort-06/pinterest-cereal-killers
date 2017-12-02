@@ -1,0 +1,50 @@
+<div class="container-fluid" id="setting">
+    <h1>Profile Settings</h1>
+
+  <form name="simple-form">
+    <div class="row inputRow">
+      <div class="col-xs-3">
+       <p>First Name:
+       <input type="text" class="form-control" placeholder="Joe" aria-describedby="basic-addon1" required/>
+       </p>
+       <p>Last Name:
+       <input type="text" class="form-control" placeholder="Lee" aria-describedby="basic-addon1" required>    
+       </p> 
+      </div>
+    </div>
+
+    <div class="avatar">
+
+    </div>    
+
+  <!--  <md-menu class="avatarChange">    	
+       <md-button aria-label="Open menu with custom trigger" class="md-icon-button" ng-mouseenter="$mdMenu.open()">Change Avatar
+       
+      <md-menu-content width="4" ng-mouseleave="$mdMenu.close()">
+        <md-menu-item ng-repeat="item in [1, 2, 3]">
+          <md-button>
+            Option {{item}}
+          </md-button>
+        </md-menu-item>
+      </md-menu-content>
+    </md-menu>	
+-->
+
+     <div class="user-name">
+       <h3>User Name</h3>
+       <input type="text" class="form-control" placeholder="User Name" aria-describedby="basic-addon1" required> 
+      </div>
+    
+    <div class="bio">
+        <h3 class="title">Bio</h3>
+        <input type="text" class="form-control" placeholder="bio message" aria-describedby="basic-addon1" required >
+                
+    </div>
+    
+    <div class="save-cancel">
+            <button class="btn btn-default saveProfile" ng-click="saveProfile()">Save</button>
+            <button class="btn btn-default cancelProfile" ng-disabled="simple-form.$invalid"ng-click="cancelProfile()">Cancel</button>
+    
+    </div>
+   </form>
+</div>
