@@ -18,7 +18,7 @@ app.service("BoardService", function($http, $q, FIREBASE_CONFIG, PinService) {
 	    	}).catch((err) => {
 	    		reject(err);
 	    	});
-	    });
+	    }); 
 	};
 
 	const countPinsOnBoard = (boardsArray) => {
