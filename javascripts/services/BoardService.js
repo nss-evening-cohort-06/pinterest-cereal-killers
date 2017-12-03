@@ -32,7 +32,6 @@ app.service("BoardService", function($http, $q, FIREBASE_CONFIG, PinService) {
 			pinBoardArray.forEach(function(pin) {
 				tempArray.push(pin.board_id);
 			});
-			console.log('tempArray: ', tempArray);
 
 			for (let i = 0; i < tempArray.length; i++) {
 			  let num = tempArray[i];
@@ -40,7 +39,6 @@ app.service("BoardService", function($http, $q, FIREBASE_CONFIG, PinService) {
 			}
 
 			boardsArray.forEach(function(board) {
-				// board.counts = counts[board.boardId];
 				board.counts = counts[board.boardId] ?  counts[board.boardId] : 0;
 			});
 
