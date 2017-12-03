@@ -23,6 +23,16 @@ app.controller("SettingsCtrl", function($rootScope, $http, $location, $q, $scope
 		});
 	};
 
+// 	const getAvatars = () => {
+//     		SettingsService.getAvatarsFromFirebase($rootScope.uid).then((results) => {
+// 			$scope.avatars = results;
+// 			console.log(avatars);
+//     	}).catch((err) => {
+//     	console.log("error in getAvatars", err);
+//    	});
+//    };
+
+
 	$scope.cancelProfile = () => {
 		$location.path('/pinterest/view');
 	};
