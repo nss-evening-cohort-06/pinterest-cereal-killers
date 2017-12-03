@@ -23,7 +23,7 @@
 				"url": "http://www.imdb.com/title/tt0099496/",
 				"title": "pin2",
 				"datePinned": "2017-11-27",
-				"uid": "vvvvvsdfafas313189ju23s",
+				"uid": "fasdfasdfafas313123xxs",
 				"board_id": 3,
 				"notes": "I don't love elves!"
 		},
@@ -32,8 +32,8 @@
 				"url": "http://www.elfcrazy.com/traditional-names-of-the-first-christmas-elves/",
 				"title": "pin3",
 				"datePinned": "2017-11-27",
-				"uid": "vvvvvsdfafas313189ju23s",
-				"board_1": 1,
+				"uid": "fasdfasdfafas313123xxs",
+				"board_id": 1,
 				"notes": "I love cats."
 		},
 		"pin4": { 
@@ -50,8 +50,8 @@
 				"url": "http://www.elfcrazy.com/traditional-names-of-the-first-christmas-elves/",
 				"title": "pin5",
 				"datePinned": "2017-11-29",
-				"uid": "vvvvvsdfafas313189ju23s",
-				"board_4": 4,
+				"uid": "fasdfasdfafas313123xxs",
+				"board_id": 4,
 				"notes": "I love this Elf."
 		},
 		"pin6": { 
@@ -95,37 +95,31 @@
 		"board0": {
 				"boardId": 0,
 				"name": "Dogs",
-				"counts": 2,
 				"uid": "fasdfasdfafas313123xxs"
 		},
 		"board1": {
 				"boardId": 1,
 				"name": "Cats",
-				"counts": 2,
 				"uid": "fasdfasdfafas313123xxs"
 		},
 		"board2": {
 				"boardId": 2,
 				"name": "Birds",
-				"counts": 2,
 				"uid": "fasdfasdfafas313123xxs"
 		},
 		"board3": {
 				"boardId": 3,
 				"name": "Elves",
-				"counts": 1,
-				"uid": "vvvvvsdfafas313189ju23s"
+				"uid": "fasdfasdfafas313123xxs"
 		},
 		"board4": {
 				"boardId": 4,
 				"name": "Fishes",
-				"counts": 2,
-				"uid": "vvvvvsdfafas313189ju23s"
+				"uid": "fasdfasdfafas313123xxs"
 		},
 		"board5": {
 				"boardId": 5,
 				"name": "Turtles",
-				"counts": 1,
 				"uid": "vvvvvsdfafas313189ju23s"
 		}
 	},

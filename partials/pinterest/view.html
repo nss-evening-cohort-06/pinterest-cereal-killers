@@ -1,6 +1,7 @@
 <div class="text-center" id="view">
-	<div id="pins">
-		<div ng-repeat="newPin in pins" class="col-lg-2 col-lg-offset-2">
+	<h1>Pins</h1>
+	<div id="pins" class="container">
+		<div ng-repeat="newPin in pins" class="col-md-4 mb-3">
 			<div class="thumbnail pincard">
 			<div class="pin-holder">
 				<h4 ng-model="pinObject.board">{{newPin.board}}</h4>
