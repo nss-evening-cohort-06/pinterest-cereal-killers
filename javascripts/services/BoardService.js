@@ -1,6 +1,6 @@
 "use strict";
 
-app.service("BoardService", function($http, $q, FIREBASE_CONFIG) {
+app.service("BoardService", function($http, $q, FIREBASE_CONFIG, PinService) {
 
 	const getBoards = (userUid) => {
 	    let boards = [];
@@ -12,6 +12,7 @@ app.service("BoardService", function($http, $q, FIREBASE_CONFIG) {
 	                myBoards[key].id = key; 
 	                boards.push(myBoards[key]);
 	            });
+	            countPinsOnBoard(boards);
 	            resolve(boards);
 	            // console.log('in getBoards', boards);
 	    	}).catch((err) => {
@@ -19,6 +20,36 @@ app.service("BoardService", function($http, $q, FIREBASE_CONFIG) {
 	    	});
 	    });
 	};
+
+	const countPinsOnBoard = (boardsArray) => {
+		let Uid = boardsArray[0].uid;
+		let pinBoardArray = [];
+		let tempArray = [];
+		var counts = {};
+
+		PinService.getAllPins(Uid).then((results) => {
+			pinBoardArray = results;
+			pinBoardArray.forEach(function(pin) {
+				tempArray.push(pin.board_id);
+			});
+			console.log('tempArray: ', tempArray);
+
+			for (let i = 0; i < tempArray.length; i++) {
+			  let num = tempArray[i];
+			  counts[num] = counts[num] ? counts[num] + 1 : 1;
+			}
+
+			boardsArray.forEach(function(board) {
+				// board.counts = counts[board.boardId];
+				board.counts = counts[board.boardId] ?  counts[board.boardId] : 0;
+			});
+
+
+		}).catch((err) => {
+			console.log("error in getPins", err);
+		});
+	};
+
 
 	const deleteBoard = (boardId) => {
 		return $http.delete(`${FIREBASE_CONFIG.databaseURL}/boards/${boardId}.json`);
@@ -40,12 +71,16 @@ app.service("BoardService", function($http, $q, FIREBASE_CONFIG) {
 		let Uid = pinArray[0].uid;
 		let boardsArray = [];
 		getBoards(Uid).then((results) => {
-			boardsArray = results;
+			boardsArray = results; console.log(" boardsArray: ", results);
 			pinArray.forEach(function(pin) {
 			    let temp = boardsArray.filter(function(board) {
+			    	console.log('board.boardId: ',board.boardId, ' pin.board_id: ', pin.board_id );
 			        return board.boardId === pin.board_id;
 			    });
+			    console.log('temp[0]: ', temp[0]);
 			    pin.board = (temp[0] !== undefined) ? temp[0].name : null;
+			    console.log('pin.board: ', pin.board);
+
 			});
 		// console.log('joinBoards - boardsArray', boardsArray);
 		}).catch((err) => {
