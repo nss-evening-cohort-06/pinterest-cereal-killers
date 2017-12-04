@@ -24,16 +24,20 @@ $scope.newpin = {};
 		$scope.newpin.datePinned = $rootScope.updatedPin.datePinned;
 
 	};
+
+	$scope.pinDetail = (newPin) => {
+		$location.path("/pinterest/boards");
+	};
 		
-/*		PinService.updatePin(newpin, $routeParams.id).then((results) => {
+	/*	PinService.updatePin(newpin, $routeParams.id).then((results) => {
 			$location.path("/pinterest/boards");
 		}).catch((err) => {
 			console.log("error in submitForm", err);
-		});
+		});*/
 	
 	getPins();
-};
-*/
+
+
 garbageFunction();
 
 });
