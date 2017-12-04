@@ -67,7 +67,6 @@ app.service("BoardService", function($http, $q, $rootScope, FIREBASE_CONFIG, Pin
 		let Uid = $rootScope.uid;
 		let boardsArray = [];
 		getBoards(Uid).then((results) => {
-			boardsArray = results; console.log(" boardsArray: ", results);
 			pinArray.forEach(function(pin) {
 			    let temp = boardsArray.filter(function(board) {
 			    	

@@ -12,7 +12,6 @@ $scope.newpin = {};
 	};
 
 	$scope.niceNewPin = () => { 
-		console.log("Heyyyyy");
 		let newpin = {};
 		
 		newpin.board_id = $rootScope.updatedPin.board_id;
@@ -21,10 +20,8 @@ $scope.newpin = {};
 		newpin.notes = $rootScope.updatedPin.notes;
 		newpin.datePinned = $rootScope.updatedPin.datePinned;
 		newpin.uid = $rootScope.uid;
-		console.log("thenewpin", newpin);
-		console.log("PINID", $rootScope.pinId);
+
 		PinService.updatePin(newpin, $rootScope.pinId).then((results) => {
-			console.log("GARBAGE RESULTS", results);
 			$scope.pinDetail();
 		}).catch((err) => {
 			console.log("error in garbageFunction", err);

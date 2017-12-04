@@ -25,13 +25,13 @@ app.controller("BoardsCtrl", function($location, $rootScope, $scope, BoardServic
     	$location.path(`/pinterest/editBoard/${boardToEdit.id}`);
   	};
 
-  	$scope.boardDetail = (boardData) => { console.log("boarddata", boardData);
+  	$scope.boardDetail = (boardData) => { 
     	$rootScope.boardData = boardData;
     	$rootScope.boardDataFlag = true;
     	$location.path(`/pinterest/boardView`);
   	};
 
-	$scope.boardCreate = () => { console.log("in boardCreate");
+	$scope.boardCreate = () => { 
     	$rootScope.boardEditFlag = false;
     	$location.path(`/pinterest/createNewBoard`);
   	};

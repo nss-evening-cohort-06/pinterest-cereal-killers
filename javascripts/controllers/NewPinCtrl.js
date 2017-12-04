@@ -25,7 +25,6 @@ $scope.newPinObject = (newpin) => {
 				newPin.board_id = results.data.name;
 				PinService.addNewPin(newPin).then((results) => {
 					$location.path("/pinterest/view");
-					console.log(updatedPin);
 				}).catch((err) => {
 					console.log("error in postNewPin", err);
 					

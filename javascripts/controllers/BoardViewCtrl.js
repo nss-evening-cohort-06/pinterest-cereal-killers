@@ -13,7 +13,6 @@ app.controller("BoardViewCtrl", function($location, $rootScope, $scope, PinServi
 			if(!$rootScope.boardDataFlag) {
 				$scope.pins = results;
 			} else {
-				console.log("BOARD", $rootScope.boardData.id);
 				pinBoardArray = results;
 				let temp = pinBoardArray.filter(function(pin) {
 					return $rootScope.boardData.id === pin.board_id;
