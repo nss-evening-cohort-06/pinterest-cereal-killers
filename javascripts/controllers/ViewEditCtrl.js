@@ -1,7 +1,7 @@
 "use strict";
 
 app.controller("ViewEditCtrl", function($location, $rootScope, $routeParams, $scope, PinService) {
-
+$scope.newpin = {};
 
 	const getPins = () => {
 		PinService.getSinglePin($routeParams.id).then((results) => { 
@@ -10,9 +10,6 @@ app.controller("ViewEditCtrl", function($location, $rootScope, $routeParams, $sc
 			console.log("error in getPins", err);
 		});
 	};
-
-$scope.newpin = {};
-
 
 	const garbageFunction = () => { 
 		let newpin = {};
@@ -24,16 +21,14 @@ $scope.newpin = {};
 		$scope.newpin.datePinned = $rootScope.updatedPin.datePinned;
 
 	};
-		
-/*		PinService.updatePin(newpin, $routeParams.id).then((results) => {
-			$location.path("/pinterest/boards");
-		}).catch((err) => {
-			console.log("error in submitForm", err);
-		});
+
+	$scope.pinDetail = (newPin) => {
+		$location.path("/pinterest/boards");
+	};
+	
 	
 	getPins();
-};
-*/
-garbageFunction();
+
+		garbageFunction();
 
 });

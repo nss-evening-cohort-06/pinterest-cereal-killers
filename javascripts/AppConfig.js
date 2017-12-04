@@ -75,6 +75,11 @@ app.config(function($routeProvider){
             controller: 'BoardsNewCtrl',
             // resolve: {isAuth}
         })
+         .when("/pinterest/pinsNew", {
+            templateUrl: 'partials/pinterest/pinsNew.html',
+            controller: 'NewPinCtrl',
+            // resolve: {isAuth}
+        })
         .otherwise('/login');
 });
 

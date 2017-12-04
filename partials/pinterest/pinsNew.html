@@ -2,7 +2,7 @@
 <div class="editPin container col-md-4 col-md-offset-4">
   <form class="form" name="newpin">
     <div class="row inputRow">
-      <h3 class="friends-title"> Save Pin </h3>
+      <h3 class="friends-title"> Create New Pin </h3>
       <div class="">
         <input type="text" class="form-control" id="board" placeholder="Board" ng-model="updatedPin.board" ng-required="true">
       </div>
@@ -23,7 +23,7 @@
         <input type="text" class="form-control" id="datePinned" placeholder="Date" ng-model="updatedPin.datePinned" ng-required="true">
       </div>
       
-     <button type="button" class="btn btn-default" ng-click="pinDetail()">Save</button>
+     <button type="button" class="btn btn-default" ng-click="postNewPin(updatedPin)">Save</button>
   </form>
 </div>     
 </div>

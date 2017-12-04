@@ -20,9 +20,7 @@ app.controller("ViewCtrl", function($location, $rootScope, $scope, PinService, B
 				});
 				$scope.pins = temp;
 			}
-			// let Pins = BoardService.joinBoards(results);
-			// console.log('in getPins - $scope.pins',$scope.pins);
-			// console.log('in getPins - Pins',Pins);
+
 		}).catch((err) => {
 			console.log("error in getPins", err);
 		});
@@ -41,15 +39,6 @@ app.controller("ViewCtrl", function($location, $rootScope, $scope, PinService, B
 		});
 	};
 
-		
-	$scope.createNewPin = (newPin) => {
-		PinService.addNewPin(newPin).then((results) => {
-			$location.path("/pinterest/viewpinedit");
-		}).catch((err) => {
-			console.log("error in addNewPin", err);
-			
-		});
-	};
 
 	$scope.submitForm = (newpin) => { 
 		 $rootScope.updatedPin = {
@@ -58,9 +47,14 @@ app.controller("ViewCtrl", function($location, $rootScope, $scope, PinService, B
 			"url": newpin.url,
 			"notes": newpin.notes,
 			"datePinned": newpin.datePinned,
-			"user_id": "fasdfasdfafas313123xxs",
+			"uid": "fasdfasdfafas313123xxs",
 		};
 		$location.path("/pinterest/viewpinedit");
+	};
+
+
+	$scope.createNewPin = () => {
+		$location.path("/pinterest/pinsNew");
 	};
 		
 		
