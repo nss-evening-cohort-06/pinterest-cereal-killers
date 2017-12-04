@@ -1,7 +1,13 @@
 <div class="text-center" id="view">
 	<div id="pins">
-			<button class="btn btn-default save col-xs-3" ng-click="addNewPin(newPin)">New Pin</button>
-		<div ng-repeat="newPin in pins" class="col-lg-2 col-lg-offset-2">
+	<h1>Pins</h1>
+			<button class="btn btn-default new" ng-click="addNewPin(newPin)">New Pin</button>
+	
+
+	
+	<div id="pins" class="container">
+		<div ng-repeat="newPin in pins" class="col-md-4">
+
 			<div class="thumbnail pincard">
 			<div class="pin-holder">
 				<h4 ng-model="pinObject.board">{{newPin.board}}</h4>
