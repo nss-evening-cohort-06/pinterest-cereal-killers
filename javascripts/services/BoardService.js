@@ -7,14 +7,12 @@ app.service("BoardService", function($http, $q, FIREBASE_CONFIG, PinService) {
 	    return $q((resolve, reject) => { 
 	    	$http.get(`${FIREBASE_CONFIG.databaseURL}/boards.json?orderBy="uid"&equalTo="${userUid}"`).then((results) => {
 	            let myBoards = results.data; 
-	            // console.log('in getBoards', myBoards);
 	            Object.keys(myBoards).forEach((key) => {
 	                myBoards[key].id = key; 
 	                boards.push(myBoards[key]);
 	            });
 	            countPinsOnBoard(boards);
 	            resolve(boards);
-	            // console.log('in getBoards', boards);
 	    	}).catch((err) => {
 	    		reject(err);
 	    	});
@@ -80,7 +78,6 @@ app.service("BoardService", function($http, $q, FIREBASE_CONFIG, PinService) {
 			    console.log('pin.board: ', pin.board);
 
 			});
-		// console.log('joinBoards - boardsArray', boardsArray);
 		}).catch((err) => {
 			console.log("error in joinBoards", err);
 		});

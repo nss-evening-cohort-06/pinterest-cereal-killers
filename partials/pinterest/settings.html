@@ -1,0 +1,52 @@
+<div class="container-fluid" id="setting" ng-controller="SettingsCtrl">
+    <div class="settingsName">
+            <h1>Profile Settings</h1>
+    <form name="simple-form">
+        <div class="row inputRow">
+          <div class="col-xs-3">
+            <p>First Name:
+                <input type="text" class="form-control" placeholder="Joe" aria-describedby="basic-addon1" ng-model="newUser.firstName" required/>
+            </p>
+           <p>Last Name:
+                <input type="text" class="form-control" placeholder="Lee" aria-describedby="basic-addon1" ng-model="newUser.lastName"  required>    
+           </p> 
+          </div>
+        </div>
+    <div class="avatar">
+                <h3>Create Your Own Avatar</h3>
+                    <div id="avatarName">
+                        <label>Avatar Name:</label>
+                        <input type="text" name="name"class="form-control" ng-model="newAvatar.name" required>
+                    </div>
+                    <div id="avatarURL">
+                        <label>Avatar URL:</label>
+                        <input type="text" name="url" class="form-control" ng-model="newAvatar.url" required>
+                    </div>
+                    <button id="submitButton" ng-click="createNewAvatar()">Submit</button>
+        </div>
+    <div>
+        <h3 ng-model="newUser.avatarId">Or Select a Preset Avatar:</h3>
+            <select ng-model="selectedAvatar" ng-options="avatar.name for avatar in avatars">
+            </select>
+            <h4>You've Picked: {{selectedAvatar.name}}</h4>
+        <img src="{{selectedAvatar.avatar_url}}"></img>
+    </div>
+    
+    <div class="user-name">
+        <h3>User Name</h3>
+        <input type="text" class="form-control" placeholder="User Name" aria-describedby="basic-addon1" ng-model="newUser.userName" required> 
+    </div>
+        
+    <div class="bio">
+        <h3 class="title">Bio</h3>
+        <input type="text" class="form-control" placeholder="bio message" aria-describedby="basic-addon1" ng-model="newUser.bio" required >            
+    </div>
+        
+    <div class="save-cancel">
+        <button class="btn btn-default saveProfile" ng-disabled="simple-form.$invalid" ng-click="addNewUserToFirebase()">Save</button>
+        <button class="btn btn-default cancelProfile" ng-click="cancelProfile()">Cancel</button>
+    </div>
+</form>
+</div>
+
+</div>

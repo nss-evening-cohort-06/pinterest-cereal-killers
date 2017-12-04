@@ -20,9 +20,7 @@ app.controller("ViewCtrl", function($location, $rootScope, $scope, PinService, B
 				});
 				$scope.pins = temp;
 			}
-			// let Pins = BoardService.joinBoards(results);
-			// console.log('in getPins - $scope.pins',$scope.pins);
-			// console.log('in getPins - Pins',Pins);
+
 		}).catch((err) => {
 			console.log("error in getPins", err);
 		});
@@ -41,8 +39,6 @@ app.controller("ViewCtrl", function($location, $rootScope, $scope, PinService, B
 		});
 	};
 
-		
-	
 
 	$scope.submitForm = (newpin) => { 
 		 $rootScope.updatedPin = {
@@ -57,10 +53,9 @@ app.controller("ViewCtrl", function($location, $rootScope, $scope, PinService, B
 	};
 
 
-$scope.createNewPin = () => {
-	$location.path("/pinterest/pinsNew");
-};
-
+	$scope.createNewPin = () => {
+		$location.path("/pinterest/pinsNew");
+	};
 		
 		
 	getPins();

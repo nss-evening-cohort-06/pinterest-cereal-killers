@@ -4,9 +4,7 @@
 app.controller("BoardsCtrl", function($location, $rootScope, $scope, BoardService) {
 
 	const getMyBoards = () => {	
-		// BoardService.getBoards($rootScope.uid).then((results) => {
 		BoardService.getBoards('fasdfasdfafas313123xxs').then((results) => {
-			// console.log('getMyBoards', results);
 			$scope.boards = results;
 		}).catch((err) => {
 			console.log("error in getMyBoards", err);

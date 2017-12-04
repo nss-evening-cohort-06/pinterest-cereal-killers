@@ -1,6 +1,6 @@
 "use strict";
 
-app.controller("NewPinCtrl", function($http, $location, $rootScope, $scope, PinService, BoardService) {
+app.controller("NewPinCtrl", function($http, $location, $rootScope, $routeParams, $scope, PinService, BoardService) {
 	$scope.newpin = {};
 
 $scope.newPinObject = (newpin) => { 
@@ -12,7 +12,7 @@ $scope.newPinObject = (newpin) => {
 			"datePinned": newpin.datePinned,
 			"uid": "fasdfasdfafas313123xxs",
 		};
-	};
+};
 
 		$scope.postNewPin = (updatedPin) => {
 		PinService.addNewPin(updatedPin).then((results) => {
@@ -25,6 +25,6 @@ $scope.newPinObject = (newpin) => {
 	};
 
 
-		
+	
 
 });
