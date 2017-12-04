@@ -10,15 +10,18 @@
 	<div id="all-boards">
 		<div ng-repeat="board in boards" class="col-md-4">
 		    <div class="thumbnail">
-		    	<button class="btn btn-default detail" ng-click="boardDetail(board)"><i class="fa fa-info-circle" aria-hidden="true"></i></button>
-		    	<button class="btn btn-default detail" ng-click="boardEdit(board)"><i class="fa fa-pencil" aria-hidden="true"></i></button>
-		    	<button class="btn btn-default delete" ng-click="boardDelete(board.id)"><i class="fa fa-trash-o" aria-hidden="true"></i></button>
+		    	
 			    <div class="contact-info">
 			    	<ul id="contact-data">
 				    	<li><p><span class="left">Id:</span> &nbsp <span class="right">{{board.boardId}}</span></p></li>
 				    	<li><p><span class="left">Name:</span> &nbsp <span class="right">{{board.name}}</span></p></li>
 				    	<li><p><span class="left">Counts:</span> &nbsp <span class="right">{{board.counts}}</span></p></li>
-				    	<li><p><span class="left">Uid:</span> &nbsp <span class="right">{{board.uid}}</span></p></li>
+				    	
+						<button class="btn btn-default detail" ng-click="boardDetail(board)"><i class="fa fa-info-circle" aria-hidden="true"></i></button>
+		    			<button class="btn btn-default detail" ng-click="boardEdit(board)"><i class="fa fa-pencil" aria-hidden="true"></i></button>
+		    			<button class="btn btn-default delete" ng-click="boardDelete(board.id)"><i class="fa fa-trash-o" aria-hidden="true"></i></button>
+
+
 				    </ul>
 			    </div>
 	     	</div>

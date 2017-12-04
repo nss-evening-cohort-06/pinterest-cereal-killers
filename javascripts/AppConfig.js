@@ -80,6 +80,11 @@ app.config(function($routeProvider){
             controller: 'NewPinCtrl',
              resolve: {isAuth}
         })
+         .when("/pinterest/boardView", {
+            templateUrl: 'partials/pinterest/view.html',
+            controller: 'BoardViewCtrl',
+             resolve: {isAuth}
+        })
         .otherwise('/login');
 });
 

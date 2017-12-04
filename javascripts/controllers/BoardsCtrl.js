@@ -11,7 +11,7 @@ app.controller("BoardsCtrl", function($location, $rootScope, $scope, BoardServic
 		});
 	};
 
-	$scope.boardDelete = (boardId) => { console.log("in deleteBoard", boardId);
+	$scope.boardDelete = (boardId) => { 
 		BoardService.deleteBoard(boardId).then((results) => {
 			getMyBoards();
 		}).catch((err) => {
@@ -28,7 +28,7 @@ app.controller("BoardsCtrl", function($location, $rootScope, $scope, BoardServic
   	$scope.boardDetail = (boardData) => { 
     	$rootScope.boardData = boardData;
     	$rootScope.boardDataFlag = true;
-    	$location.path(`/pinterest/view`);
+    	$location.path(`/pinterest/boardView`);
   	};
 
 	$scope.boardCreate = () => { console.log("in boardCreate");
