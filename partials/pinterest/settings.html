@@ -1,6 +1,6 @@
 <div class="container-fluid" id="setting" ng-controller="SettingsCtrl">
-    <h1>Profile Settings</h1>
-    
+    <div class="settingsName">
+            <h1>Profile Settings</h1>
     <form name="simple-form">
         <div class="row inputRow">
           <div class="col-xs-3">
@@ -12,10 +12,8 @@
            </p> 
           </div>
         </div>
-
     <div class="avatar">
-                <h1>Create Your Own Avatar</h1>
-                <form name="avatarForm">
+                <h3>Create Your Own Avatar</h3>
                     <div id="avatarName">
                         <label>Avatar Name:</label>
                         <input type="text" name="name"class="form-control" ng-model="newAvatar.name" required>
@@ -24,16 +22,14 @@
                         <label>Avatar URL:</label>
                         <input type="text" name="url" class="form-control" ng-model="newAvatar.url" required>
                     </div>
-                    <button id="submitButton" ng-disabled="avatarForm.$invalid" ng-click="createNewAvatar()">Submit</button>
-                </form>
+                    <button id="submitButton" ng-click="createNewAvatar()">Submit</button>
         </div>
     <div>
         <h3>Select an Avatar:</h3>
-            <select ng-model="avatar">
-                <option ng-repeat="avatar in avatars" value="{{avatar.name}}">{{avatar.name}}</option>
+            <select ng-model="selectedAvatar" ng-options="avatar.name for avatar in avatars">
             </select>
-            <h4>You've Chosen: {{avatar.name}}</h4>
-        <img>{{avatar.avatar_url}}</img>
+            <h4>You've Picked: {{selectedAvatar.name}}</h4>
+        <img src="{{selectedAvatar.avatar_url}}"></img>
     </div>
     
     <div class="user-name">
@@ -48,8 +44,9 @@
         
     <div class="save-cancel">
         <button class="btn btn-default saveProfile" ng-disabled="simple-form.$invalid" ng-click="addNewUserToFirebase()">Save</button>
-        <button class="btn btn-default cancelProfile" ng-disabled="simple-form.$invalid"ng-click="cancelProfile()">Cancel</button>
+        <button class="btn btn-default cancelProfile" ng-click="cancelProfile()">Cancel</button>
     </div>
 </form>
+</div>
 
 </div>

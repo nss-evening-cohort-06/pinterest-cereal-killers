@@ -31,7 +31,30 @@ app.controller("SettingsCtrl", function($rootScope, $http, $location, $q, $scope
 //     	console.log("error in getAvatars", err);
 //    	});
 //    };
+//    getAvatars();
 
+$scope.avatars = [
+	{
+		"avatarId": 0,
+		"avatar_url": "./images/Rudolph.png",
+		"name": "Rudolph"
+	},
+	{
+		"avatarId": 1,
+		"avatar_url": "./images/Dancer.png",
+		"name": "Dancer"
+	},
+	{
+		"avatarId": 2,
+		"avatar_url": "./images/Prancer.png",
+		"name": "Prancer"
+	},
+	{
+		"avatarId": 3,
+		"avatar_url": "./images/Vixen.png",
+		"name": "Vixen"
+	}
+];
 
 	$scope.cancelProfile = () => {
 		$location.path('/pinterest/view');

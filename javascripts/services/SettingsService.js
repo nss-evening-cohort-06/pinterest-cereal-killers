@@ -18,10 +18,10 @@ app.service("SettingsService", function($http, $q, FIREBASE_CONFIG) {
     });
   };
 
-    const getAvatarsFromFirebase = (avatarId) => {
+    const getAvatarsFromFirebase = (userUid) => {
 		let avatars = [];
     return $q((resolve, reject) => {
-      $http.get(`${FIREBASE_CONFIG.databaseURL}/avatars.json?orderBy="uid"&equalTo="${avatarId}"`).then((results) => {
+      $http.get(`${FIREBASE_CONFIG.databaseURL}/avatars.json?orderBy="uid"&equalTo="${userUid}"`).then((results) => {
         let fbAvatars = results.data;
         Object.keys(fbAvatars).forEach((key) => {
           fbAvatars[key].id = key;

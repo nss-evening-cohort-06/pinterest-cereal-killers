@@ -1,9 +1,10 @@
 "use strict";
 
-app.controller("NavCtrl", function($scope, $location) {
+app.controller("NavCtrl", function($rootScope, $scope, $location) {
 	$scope.controller = "NavCtrl";
 
-	$scope.editUser = (userId) => {
-		$location.path(`/pinterest/settingsedit/${userId}`);
+	$scope.editUser = (userToEdit) => {
+		$rootScope.userToEdit = userToEdit;
+		$location.path(`/pinterest/settingsedit/${userToEdit.id}`);
 	};
 });

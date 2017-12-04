@@ -45,7 +45,7 @@ app.config(function($routeProvider){
             controller: 'SettingsCtrl'
             // resolve: '{isAuth}'
         })
-        .when("pinterest/settingsedit/:id", {
+        .when("pinterest/settingsedit/", {
             templateUrl: 'partials/pinterest/settingsedit.html',
             controller: 'SettingsEditCtrl'
             // resolve: '{isAuth}'
