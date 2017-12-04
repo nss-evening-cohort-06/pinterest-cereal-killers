@@ -22,7 +22,6 @@ app.controller("SettingsCtrl", function($rootScope, $http, $location, $q, $scope
 			console.log("error in addNewAvatar", error);
 		});
 	};
-
 // 	const getAvatars = () => {
 //     		SettingsService.getAvatarsFromFirebase($rootScope.uid).then((results) => {
 // 			$scope.avatars = results;
