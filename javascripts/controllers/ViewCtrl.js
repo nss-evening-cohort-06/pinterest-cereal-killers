@@ -7,7 +7,7 @@ app.controller("ViewCtrl", function($location, $rootScope, $scope, PinService, B
 	let pinBoardArray = [];
 
 	const getPins = () => {
-		PinService.getAllPins("fasdfasdfafas313123xxs").then((results) => {
+		PinService.getAllPins($rootScope.uid).then((results) => {
 			BoardService.joinBoards(results);
 
 			if(!$rootScope.boardDataFlag) {
@@ -47,7 +47,7 @@ app.controller("ViewCtrl", function($location, $rootScope, $scope, PinService, B
 			"url": newpin.url,
 			"notes": newpin.notes,
 			"datePinned": newpin.datePinned,
-			"uid": "fasdfasdfafas313123xxs",
+			"uid": $rootScope.uid,
 		};
 		$location.path("/pinterest/viewpinedit");
 	};

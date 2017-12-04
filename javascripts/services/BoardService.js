@@ -1,6 +1,6 @@
 "use strict";
 
-app.service("BoardService", function($http, $q, FIREBASE_CONFIG, PinService) {
+app.service("BoardService", function($http, $q, $rootScope, FIREBASE_CONFIG, PinService) {
 
 	const getBoards = (userUid) => {
 	    let boards = [];
@@ -20,7 +20,7 @@ app.service("BoardService", function($http, $q, FIREBASE_CONFIG, PinService) {
 	};
 
 	const countPinsOnBoard = (boardsArray) => {
-		let Uid = boardsArray[0].uid;
+		let Uid = $rootScope.uid;
 		let pinBoardArray = [];
 		let tempArray = [];
 		var counts = {};
@@ -64,7 +64,7 @@ app.service("BoardService", function($http, $q, FIREBASE_CONFIG, PinService) {
 
 
 	const joinBoards = (pinArray) => {
-		let Uid = pinArray[0].uid;
+		let Uid = $rootScope.uid;
 		let boardsArray = [];
 		getBoards(Uid).then((results) => {
 			boardsArray = results; console.log(" boardsArray: ", results);
