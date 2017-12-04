@@ -5,23 +5,35 @@ app.controller("NewPinCtrl", function($http, $location, $rootScope, $routeParams
 
 $scope.newPinObject = (newpin) => { 
 		 $rootScope.updatedPin = {
-			"board": newpin.board,
+			"board_id": newpin.board,
 			"title": newpin.title,
 			"url": newpin.url,
 			"notes": newpin.notes,
 			"datePinned": newpin.datePinned,
-			"uid": "fasdfasdfafas313123xxs",
+			"uid": $rootScope.uid,
 		};
+		return $rootScope.updatedPin;
 };
 
 		$scope.postNewPin = (updatedPin) => {
-		PinService.addNewPin(updatedPin).then((results) => {
-			$location.path("/pinterest/view");
-			console.log(updatedPin);
-		}).catch((err) => {
-			console.log("error in postNewPin", err);
-			
-		});
+			let boardObject = {
+				"name": updatedPin.board,
+				"uid": $rootScope.uid
+			};
+			BoardService.createNewBoard(boardObject).then((results) => {
+				let newPin = $scope.newPinObject(updatedPin);
+				newPin.board_id = results.data.name;
+				PinService.addNewPin(newPin).then((results) => {
+					$location.path("/pinterest/view");
+					console.log(updatedPin);
+				}).catch((err) => {
+					console.log("error in postNewPin", err);
+					
+				});
+			}).catch((err) => {
+				console.log("error in postNewPin2", err);
+			});
+
 	};
 
 

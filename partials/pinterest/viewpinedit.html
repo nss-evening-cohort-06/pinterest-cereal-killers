@@ -1,11 +1,7 @@
 <div class="text-center" id="edit">
 <div class="editPin container col-md-4 col-md-offset-4">
-  <form class="form" name="newpin">
     <div class="row inputRow">
       <h3 class="friends-title"> Save Pin </h3>
-      <div class="">
-        <input type="text" class="form-control" id="board" placeholder="Board" ng-model="updatedPin.board" ng-required="true">
-      </div>
       <div class="">
         <input type="text" class="form-control" id="title" placeholder="Pin Title" ng-model="updatedPin.title" ng-required="true">
       </div>
@@ -23,8 +19,7 @@
         <input type="text" class="form-control" id="datePinned" placeholder="Date" ng-model="updatedPin.datePinned" ng-required="true">
       </div>
       
-     <button type="button" class="btn btn-default" ng-click="pinDetail()">Save</button>
-  </form>
+     <button type="button" class="btn btn-default" ng-click="niceNewPin()">Save</button>
 </div>     
 </div>
          

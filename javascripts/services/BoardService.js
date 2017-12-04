@@ -37,7 +37,7 @@ app.service("BoardService", function($http, $q, $rootScope, FIREBASE_CONFIG, Pin
 			}
 
 			boardsArray.forEach(function(board) {
-				board.counts = counts[board.boardId] ?  counts[board.boardId] : 0;
+				board.counts = counts[board.id] ?  counts[board.id] : 0;
 			});
 
 
@@ -70,13 +70,11 @@ app.service("BoardService", function($http, $q, $rootScope, FIREBASE_CONFIG, Pin
 			boardsArray = results; console.log(" boardsArray: ", results);
 			pinArray.forEach(function(pin) {
 			    let temp = boardsArray.filter(function(board) {
-			    	console.log('board.boardId: ',board.boardId, ' pin.board_id: ', pin.board_id );
-			        return board.boardId === pin.board_id;
+			    	
+			        return board.id === pin.board_id;
 			    });
-			    console.log('temp[0]: ', temp[0]);
 			    pin.board = (temp[0] !== undefined) ? temp[0].name : null;
-			    console.log('pin.board: ', pin.board);
-
+			    
 			});
 		}).catch((err) => {
 			console.log("error in joinBoards", err);

@@ -30,13 +30,15 @@ app.controller("ViewCtrl", function($location, $rootScope, $scope, PinService, B
 
 	$scope.submitForm = (newpin) => { 
 		 $rootScope.updatedPin = {
-			"board": newpin.board,
+			"board_id": newpin.board_id,
 			"title": newpin.title,
 			"url": newpin.url,
 			"notes": newpin.notes,
 			"datePinned": newpin.datePinned,
 			"uid": $rootScope.uid,
+
 		};
+		$rootScope.pinId = newpin.id;
 		$location.path("/pinterest/viewpinedit");
 	};
 
