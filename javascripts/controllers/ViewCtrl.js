@@ -51,20 +51,26 @@ app.controller("ViewCtrl", function($location, $rootScope, $scope, PinService, B
 			"url": newpin.url,
 			"notes": newpin.notes,
 			"datePinned": newpin.datePinned,
-			"user_id": "fasdfasdfafas313123xxs",
+			"uid": "fasdfasdfafas313123xxs",
 		};
 		$location.path("/pinterest/viewpinedit");
 	};
 
 
-	$scope.createNewPin = (newPin) => {
-		PinService.addNewPin(newPin).then((results) => {
-			$location.path("/pinterest/view");
-		}).catch((err) => {
-			console.log("error in addNewPin", err);
+$scope.createNewPin = () => {
+	$location.path("/pinterest/pinsNew");
+};
+
+
+	// $scope.postNewPin = (newpin) => {
+	
+	// 	PinService.addNewPin(newpin).then((results) => {
+	// 		$location.path("/pinterest/view");
+	// 	}).catch((err) => {
+	// 		console.log("error in postNewPin", err);
 			
-		});
-	};
+	// 	});
+	// };
 		
 		
 	getPins();
