@@ -25,7 +25,7 @@
                     <button id="submitButton" ng-click="createNewAvatar()">Submit</button>
         </div>
     <div>
-        <h3>Select an Avatar:</h3>
+        <h3 ng-model="newUser.avatarId">Or Select a Preset Avatar:</h3>
             <select ng-model="selectedAvatar" ng-options="avatar.name for avatar in avatars">
             </select>
             <h4>You've Picked: {{selectedAvatar.name}}</h4>
