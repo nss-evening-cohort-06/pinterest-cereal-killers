@@ -1,8 +1,7 @@
 "use strict";
 
-app.controller("ViewCtrl", function($location, $rootScope, $scope, PinService, BoardService) {
-
-	$rootScope.boardDataFlag = false;
+app.controller("BoardViewCtrl", function($location, $rootScope, $scope, PinService, BoardService) {
+	$rootScope.boardDataFlag = true;
 	$scope.pins = [];
 	$scope.pinObject = {};
 	let pinBoardArray = [];
@@ -16,7 +15,7 @@ app.controller("ViewCtrl", function($location, $rootScope, $scope, PinService, B
 			} else {
 				pinBoardArray = results;
 				let temp = pinBoardArray.filter(function(pin) {
-					return $rootScope.boardData.boardId === pin.board_id;
+					return $rootScope.boardData.id === pin.board_id;
 				});
 				$scope.pins = temp;
 			}
@@ -28,17 +27,33 @@ app.controller("ViewCtrl", function($location, $rootScope, $scope, PinService, B
 	getPins();
 
 
+
+	$scope.deleteOnePin = (pinId) => { 
+		PinService.deletePin(pinId).then((results) => {
+			getPins();
+		}).catch((err) => {
+			console.log("error in deleteOnePin", err);
+		});
+	};
+
+
+	const getSpecificPins = (boardid) => {
+		console.log('in getSpecificPins', boardid);
+	};
+	
+	
+	
+
+
 	$scope.submitForm = (newpin) => { 
 		 $rootScope.updatedPin = {
-			"board_id": newpin.board_id,
+			"board": newpin.board,
 			"title": newpin.title,
 			"url": newpin.url,
 			"notes": newpin.notes,
 			"datePinned": newpin.datePinned,
 			"uid": $rootScope.uid,
-
 		};
-		$rootScope.pinId = newpin.id;
 		$location.path("/pinterest/viewpinedit");
 	};
 

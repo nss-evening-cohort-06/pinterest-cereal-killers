@@ -15,7 +15,10 @@
 				<p ng-model="pinObject.url">{{newPin.url}}</p>
 				<p ng-model="pinObject.notes">{{newPin.notes}} </p>
 				<p ng-model="pinObject.datePinned">{{newPin.datePinned}}</p>
+
 				<button class="btn btn-default save col-xs-3" ng-click="submitForm(newPin)"><i class="fa fa-bookmark-o" aria-hidden="true"></i></button>
+
+				<button class="btn btn-default save col-xs-3" ng-show="boardDataFlag" ng-click="deleteOnePin(newPin.id)"><i class="fa fa-trash-o" aria-hidden="true"></i></button>
 				
 			</div>
 		</div>

@@ -11,15 +11,21 @@ $scope.newpin = {};
 		});
 	};
 
-	const garbageFunction = () => { 
+	$scope.niceNewPin = () => { 
 		let newpin = {};
 		
-		$scope.newpin.board = $rootScope.updatedPin.board;
-		$scope.newpin.title = $rootScope.updatedPin.title;
-		$scope.newpin.url = $rootScope.updatedPin.url;
-		$scope.newpin.notes = $rootScope.updatedPin.notes;
-		$scope.newpin.datePinned = $rootScope.updatedPin.datePinned;
+		newpin.board_id = $rootScope.updatedPin.board_id;
+		newpin.title = $rootScope.updatedPin.title;
+		newpin.url = $rootScope.updatedPin.url;
+		newpin.notes = $rootScope.updatedPin.notes;
+		newpin.datePinned = $rootScope.updatedPin.datePinned;
+		newpin.uid = $rootScope.uid;
 
+		PinService.updatePin(newpin, $rootScope.pinId).then((results) => {
+			$scope.pinDetail();
+		}).catch((err) => {
+			console.log("error in garbageFunction", err);
+		});
 	};
 
 	$scope.pinDetail = (newPin) => {
@@ -28,7 +34,5 @@ $scope.newpin = {};
 	
 	
 	getPins();
-
-		garbageFunction();
 
 });

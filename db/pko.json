@@ -5,7 +5,7 @@
 				"url": "https://www.petcofoundation.org/put-your-love-into-action/learn-about-adoption/",
 				"title": "pin0",
 				"datePinned": "2017-11-27",
-				"uid": "fasdfasdfafas313123xxs",
+				"uid": "nojgxQu7GkTJhej0uLUaeRShaFH3",
 				"board_id": 0,
 				"notes": "I love dogs!"
 		},
@@ -14,7 +14,7 @@
 				"url": "https://www.facebook.com/officialsuperdogs/",
 				"title": "pin1",
 				"datePinned": "2017-11-27",
-				"uid": "fasdfasdfafas313123xxs",
+				"uid": "nojgxQu7GkTJhej0uLUaeRShaFH3",
 				"board_id": 0,
 				"notes": "I love dogs!"
 		},
@@ -23,7 +23,7 @@
 				"url": "http://www.imdb.com/title/tt0099496/",
 				"title": "pin2",
 				"datePinned": "2017-11-27",
-				"uid": "fasdfasdfafas313123xxs",
+				"uid": "nojgxQu7GkTJhej0uLUaeRShaFH3",
 				"board_id": 3,
 				"notes": "I don't love elves!"
 		},
@@ -32,7 +32,7 @@
 				"url": "http://www.elfcrazy.com/traditional-names-of-the-first-christmas-elves/",
 				"title": "pin3",
 				"datePinned": "2017-11-27",
-				"uid": "fasdfasdfafas313123xxs",
+				"uid": "nojgxQu7GkTJhej0uLUaeRShaFH3",
 				"board_id": 1,
 				"notes": "I love cats."
 		},
@@ -41,7 +41,7 @@
 				"url": "http://www.elfcrazy.com/traditional-names-of-the-first-christmas-elves/",
 				"title": "pin4",
 				"datePinned": "2017-11-29",
-				"uid": "vvvvvsdfafas313189ju23s",
+				"uid": "nojgxQu7GkTJhej0uLUaeRShaFH3",
 				"board_id": 1,
 				"notes": "I love this cats."
 		},
@@ -50,7 +50,7 @@
 				"url": "http://www.elfcrazy.com/traditional-names-of-the-first-christmas-elves/",
 				"title": "pin5",
 				"datePinned": "2017-11-29",
-				"uid": "fasdfasdfafas313123xxs",
+				"uid": "nojgxQu7GkTJhej0uLUaeRShaFH3",
 				"board_id": 4,
 				"notes": "I love this Elf."
 		},
@@ -59,7 +59,7 @@
 				"url": "http://www.elfcrazy.com/traditional-names-of-the-first-christmas-elves/",
 				"title": "pin6",
 				"datePinned": "2017-11-29",
-				"uid": "vvvvvsdfafas313189ju23s",
+				"uid": "nojgxQu7GkTJhej0uLUaeRShaFH3",
 				"board_id": 4,
 				"notes": "I love this Elf."
 		},
@@ -68,7 +68,7 @@
 				"url": "http://www.elfcrazy.com/traditional-names-of-the-first-christmas-elves/",
 				"title": "pin7",
 				"datePinned": "2017-11-29",
-				"uid": "vvvvvsdfafas313189ju23s",
+				"uid": "nojgxQu7GkTJhej0uLUaeRShaFH3",
 				"board_id": 2,
 				"notes": "I love birds."
 		},
@@ -77,7 +77,7 @@
 				"url": "http://www.elfcrazy.com/traditional-names-of-the-first-christmas-elves/",
 				"title": "pin8",
 				"datePinned": "2017-11-29",
-				"uid": "vvvvvsdfafas313189ju23s",
+				"uid": "nojgxQu7GkTJhej0uLUaeRShaFH3",
 				"board_id": 2,
 				"notes": "I love Birds."
 		},
@@ -86,7 +86,7 @@
 				"url": "http://www.elfcrazy.com/traditional-names-of-the-first-christmas-elves/",
 				"title": "pin9",
 				"datePinned": "2017-11-29",
-				"uid": "vvvvvsdfafas313189ju23s",
+				"uid": "nojgxQu7GkTJhej0uLUaeRShaFH3",
 				"board_id": 5,
 				"notes": "I love this Turtles."
 		}
@@ -95,32 +95,32 @@
 		"board0": {
 				"boardId": 0,
 				"name": "Dogs",
-				"uid": "fasdfasdfafas313123xxs"
+				"uid": "nojgxQu7GkTJhej0uLUaeRShaFH3"
 		},
 		"board1": {
 				"boardId": 1,
 				"name": "Cats",
-				"uid": "fasdfasdfafas313123xxs"
+				"uid": "nojgxQu7GkTJhej0uLUaeRShaFH3"
 		},
 		"board2": {
 				"boardId": 2,
 				"name": "Birds",
-				"uid": "fasdfasdfafas313123xxs"
+				"uid": "nojgxQu7GkTJhej0uLUaeRShaFH3"
 		},
 		"board3": {
 				"boardId": 3,
 				"name": "Elves",
-				"uid": "fasdfasdfafas313123xxs"
+				"uid": "nojgxQu7GkTJhej0uLUaeRShaFH3"
 		},
 		"board4": {
 				"boardId": 4,
 				"name": "Fishes",
-				"uid": "fasdfasdfafas313123xxs"
+				"uid": "nojgxQu7GkTJhej0uLUaeRShaFH3"
 		},
 		"board5": {
 				"boardId": 5,
 				"name": "Turtles",
-				"uid": "vvvvvsdfafas313189ju23s"
+				"uid": "nojgxQu7GkTJhej0uLUaeRShaFH3"
 		}
 	},
 	"users": {
@@ -144,7 +144,7 @@
 		},
 		"user2": {
 				"userId": 2,
-				"uid": "frt65hyyuuytrgbdW",
+				"uid": "nojgxQu7GkTJhej0uLUaeRShaFH3",
 				"userName": "BL",
 				"firstName": "Brooke",
 				"lastName": "Lewis",

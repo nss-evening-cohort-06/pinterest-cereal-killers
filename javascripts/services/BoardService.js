@@ -1,6 +1,6 @@
 "use strict";
 
-app.service("BoardService", function($http, $q, FIREBASE_CONFIG, PinService) {
+app.service("BoardService", function($http, $q, $rootScope, FIREBASE_CONFIG, PinService) {
 
 	const getBoards = (userUid) => {
 	    let boards = [];
@@ -20,7 +20,7 @@ app.service("BoardService", function($http, $q, FIREBASE_CONFIG, PinService) {
 	};
 
 	const countPinsOnBoard = (boardsArray) => {
-		let Uid = boardsArray[0].uid;
+		let Uid = $rootScope.uid;
 		let pinBoardArray = [];
 		let tempArray = [];
 		var counts = {};
@@ -37,7 +37,7 @@ app.service("BoardService", function($http, $q, FIREBASE_CONFIG, PinService) {
 			}
 
 			boardsArray.forEach(function(board) {
-				board.counts = counts[board.boardId] ?  counts[board.boardId] : 0;
+				board.counts = counts[board.id] ?  counts[board.id] : 0;
 			});
 
 
@@ -64,19 +64,16 @@ app.service("BoardService", function($http, $q, FIREBASE_CONFIG, PinService) {
 
 
 	const joinBoards = (pinArray) => {
-		let Uid = pinArray[0].uid;
+		let Uid = $rootScope.uid;
 		let boardsArray = [];
 		getBoards(Uid).then((results) => {
-			boardsArray = results; console.log(" boardsArray: ", results);
 			pinArray.forEach(function(pin) {
 			    let temp = boardsArray.filter(function(board) {
-			    	console.log('board.boardId: ',board.boardId, ' pin.board_id: ', pin.board_id );
-			        return board.boardId === pin.board_id;
+			    	
+			        return board.id === pin.board_id;
 			    });
-			    console.log('temp[0]: ', temp[0]);
 			    pin.board = (temp[0] !== undefined) ? temp[0].name : null;
-			    console.log('pin.board: ', pin.board);
-
+			    
 			});
 		}).catch((err) => {
 			console.log("error in joinBoards", err);

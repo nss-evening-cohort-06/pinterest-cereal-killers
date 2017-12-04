@@ -43,6 +43,7 @@ app.service("PinService", function($http, $q, FIREBASE_CONFIG) {
 		return $http.delete(`${FIREBASE_CONFIG.databaseURL}/pins/${pinId}.json`);
 	};
 
+
 	const updatePin = (updatedPin, pinId) => {
 		return $http.put(`${FIREBASE_CONFIG.databaseURL}/pins/${pinId}.json`, JSON.stringify(updatedPin));
 	};
