@@ -61,16 +61,6 @@ $scope.createNewPin = () => {
 	$location.path("/pinterest/pinsNew");
 };
 
-
-	// $scope.postNewPin = (newpin) => {
-	
-	// 	PinService.addNewPin(newpin).then((results) => {
-	// 		$location.path("/pinterest/view");
-	// 	}).catch((err) => {
-	// 		console.log("error in postNewPin", err);
-			
-	// 	});
-	// };
 		
 		
 	getPins();
