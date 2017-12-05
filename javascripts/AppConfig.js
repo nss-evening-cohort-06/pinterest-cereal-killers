@@ -43,22 +43,22 @@ app.config(function($routeProvider){
         .when("/pinterest/settings", {
             templateUrl: 'partials/pinterest/settings.html',
             controller: 'SettingsCtrl',
-             resolve: '{isAuth}'
+             resolve: {isAuth}
         })
         .when("pinterest/settingsedit/", {
             templateUrl: 'partials/pinterest/settingsedit.html',
             controller: 'SettingsEditCtrl',
-             resolve: '{isAuth}'
+             resolve: {isAuth}
         })
         .when("/pinterest/view", {
             templateUrl: 'partials/pinterest/view.html',
             controller: 'ViewCtrl',
-             resolve: '{isAuth}'
+             resolve: {isAuth}
         })
         .when("/pinterest/avatars", {
             templateUrl: 'partials/avatars.html',
             controller: 'AvatarsCtrl',
-             resolve: '{isAuth}'
+             resolve: {isAuth}
         })
         .when("/pinterest/viewpinedit", {
             templateUrl: 'partials/pinterest/viewpinedit.html',

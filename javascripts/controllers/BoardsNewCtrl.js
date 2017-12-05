@@ -4,7 +4,7 @@ app.controller("BoardsNewCtrl", function($location, $rootScope, $scope, BoardSer
 
 	$scope.saveBoard = (board) => {
 		board.uid = $rootScope.uid;
-		board.counter = 0;
+		board.boardId = Math.round(Math.random()*10000);
 		BoardService.createNewBoard(board).then(() => {
 			$location.path('/partials/pinterest/boards');
 		}).catch((err) => {
@@ -28,8 +28,8 @@ app.controller("BoardsNewCtrl", function($location, $rootScope, $scope, BoardSer
  		}
  	};
 
- 	$scope.updateBoard = (contact) => {
- 		BoardService.putBoard(contact).then(() => {
+ 	$scope.updateBoard = (board) => {
+ 		BoardService.putBoard(board).then(() => {
 			$location.path('/pinterest/boards');
 			$rootScope.flag = false;
 		}).catch((err) => {

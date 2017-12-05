@@ -11,8 +11,8 @@ app.service("BoardService", function($http, $q, $rootScope, FIREBASE_CONFIG, Pin
 	                myBoards[key].id = key; 
 	                boards.push(myBoards[key]);
 	            });
-	            countPinsOnBoard(boards);
-	            resolve(boards);
+	            // countPinsOnBoard(boards);
+	            resolve(countPinsOnBoard(boards));
 	    	}).catch((err) => {
 	    		reject(err);
 	    	});
